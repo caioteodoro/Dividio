@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B5668D32798B7B300A8C447 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668D22798B7B300A8C447 /* AppDelegate.swift */; };
+		6B5668D52798B7B300A8C447 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668D42798B7B300A8C447 /* SceneDelegate.swift */; };
+		6B5668D72798B7B300A8C447 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668D62798B7B300A8C447 /* ViewController.swift */; };
+		6B5668DA2798B7B300A8C447 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5668D82798B7B300A8C447 /* Main.storyboard */; };
+		6B5668DD2798B7B300A8C447 /* Dividio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668DB2798B7B300A8C447 /* Dividio.xcdatamodeld */; };
+		6B5668DF2798B7BD00A8C447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B5668DE2798B7BD00A8C447 /* Assets.xcassets */; };
+		6B5668E22798B7BD00A8C447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5668E02798B7BD00A8C447 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6B5668CF2798B7B300A8C447 /* Dividio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dividio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B5668D22798B7B300A8C447 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6B5668D42798B7B300A8C447 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6B5668D62798B7B300A8C447 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6B5668D92798B7B300A8C447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6B5668DC2798B7B300A8C447 /* Dividio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dividio.xcdatamodel; sourceTree = "<group>"; };
+		6B5668DE2798B7BD00A8C447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6B5668E12798B7BD00A8C447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6B5668E32798B7BD00A8C447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B5668CC2798B7B300A8C447 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B5668C62798B7B300A8C447 = {
+			isa = PBXGroup;
+			children = (
+				6B5668D12798B7B300A8C447 /* Dividio */,
+				6B5668D02798B7B300A8C447 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6B5668D02798B7B300A8C447 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B5668CF2798B7B300A8C447 /* Dividio.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B5668D12798B7B300A8C447 /* Dividio */ = {
+			isa = PBXGroup;
+			children = (
+				6B5668D22798B7B300A8C447 /* AppDelegate.swift */,
+				6B5668D42798B7B300A8C447 /* SceneDelegate.swift */,
+				6B5668D62798B7B300A8C447 /* ViewController.swift */,
+				6B5668D82798B7B300A8C447 /* Main.storyboard */,
+				6B5668DE2798B7BD00A8C447 /* Assets.xcassets */,
+				6B5668E02798B7BD00A8C447 /* LaunchScreen.storyboard */,
+				6B5668E32798B7BD00A8C447 /* Info.plist */,
+				6B5668DB2798B7B300A8C447 /* Dividio.xcdatamodeld */,
+			);
+			path = Dividio;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B5668CE2798B7B300A8C447 /* Dividio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B5668E62798B7BD00A8C447 /* Build configuration list for PBXNativeTarget "Dividio" */;
+			buildPhases = (
+				6B5668CB2798B7B300A8C447 /* Sources */,
+				6B5668CC2798B7B300A8C447 /* Frameworks */,
+				6B5668CD2798B7B300A8C447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dividio;
+			productName = Dividio;
+			productReference = 6B5668CF2798B7B300A8C447 /* Dividio.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B5668C72798B7B300A8C447 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Caio Teodoro";
+				TargetAttributes = {
+					6B5668CE2798B7B300A8C447 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 6B5668CA2798B7B300A8C447 /* Build configuration list for PBXProject "Dividio" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6B5668C62798B7B300A8C447;
+			productRefGroup = 6B5668D02798B7B300A8C447 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B5668CE2798B7B300A8C447 /* Dividio */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B5668CD2798B7B300A8C447 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B5668E22798B7BD00A8C447 /* LaunchScreen.storyboard in Resources */,
+				6B5668DF2798B7BD00A8C447 /* Assets.xcassets in Resources */,
+				6B5668DA2798B7B300A8C447 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B5668CB2798B7B300A8C447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B5668DD2798B7B300A8C447 /* Dividio.xcdatamodeld in Sources */,
+				6B5668D72798B7B300A8C447 /* ViewController.swift in Sources */,
+				6B5668D32798B7B300A8C447 /* AppDelegate.swift in Sources */,
+				6B5668D52798B7B300A8C447 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6B5668D82798B7B300A8C447 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B5668D92798B7B300A8C447 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6B5668E02798B7BD00A8C447 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B5668E12798B7BD00A8C447 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6B5668E42798B7BD00A8C447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6B5668E52798B7BD00A8C447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6B5668E72798B7BD00A8C447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V49984Y37Q;
+				INFOPLIST_FILE = Dividio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.teodoro.Dividio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6B5668E82798B7BD00A8C447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V49984Y37Q;
+				INFOPLIST_FILE = Dividio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.teodoro.Dividio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B5668CA2798B7B300A8C447 /* Build configuration list for PBXProject "Dividio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B5668E42798B7BD00A8C447 /* Debug */,
+				6B5668E52798B7BD00A8C447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B5668E62798B7BD00A8C447 /* Build configuration list for PBXNativeTarget "Dividio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B5668E72798B7BD00A8C447 /* Debug */,
+				6B5668E82798B7BD00A8C447 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6B5668DB2798B7B300A8C447 /* Dividio.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6B5668DC2798B7B300A8C447 /* Dividio.xcdatamodel */,
+			);
+			currentVersion = 6B5668DC2798B7B300A8C447 /* Dividio.xcdatamodel */;
+			path = Dividio.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6B5668C72798B7B300A8C447 /* Project object */;
+}
