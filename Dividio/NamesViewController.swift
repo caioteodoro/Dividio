@@ -10,11 +10,12 @@ import UIKit
 
 class NamesViewController: UIViewController {
     
-    var names: [String] = []
+    var names: [Person] = []
     
     @IBOutlet weak var namesTableView: UITableView!
-    @IBOutlet weak var inviteContact: UIButton!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var addPersonButton: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
     
     class NameCell: UITableViewCell {
         @IBOutlet var cellText: UILabel?
@@ -22,10 +23,12 @@ class NamesViewController: UIViewController {
     
     @IBAction func addPerson(_ sender: Any) {
         if let newName = textField.text, !newName.isEmpty {
-            names.insert(newName, at: 0);
+            names.insert(Person.init(name: newName), at: 0);
             namesTableView.beginUpdates();
             namesTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right);
             namesTableView.endUpdates();
+            textField.text = "";
+            allowContinueButton ()
         }
     }
     
@@ -33,7 +36,14 @@ class NamesViewController: UIViewController {
         super.viewDidLoad()
         namesTableView.dataSource = self;
         namesTableView.tableFooterView = UIView(frame: .zero);
+        allowContinueButton ()
     }
+    
+    func allowContinueButton () {
+        if names.isEmpty == true { continueButton.isEnabled = false;
+    } else { continueButton.isEnabled = true; }
+    }
+    
 }
 
 
@@ -44,7 +54,7 @@ extension NamesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = namesTableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath)
-        cell.textLabel?.text = names[indexPath.row]
+        cell.textLabel?.text = names[indexPath.row].name
         return cell
     }
     
@@ -52,10 +62,9 @@ extension NamesViewController: UITableViewDataSource {
         if editingStyle == .delete {
             names.remove(at: indexPath.row)
             namesTableView.deleteRows(at: [indexPath], with: .fade)
-        } 
+        }
+        allowContinueButton ()
     }
-    
-
-    
-    
 }
+
+

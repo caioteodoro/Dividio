@@ -9,23 +9,35 @@
 /* Begin PBXBuildFile section */
 		6B5668D32798B7B300A8C447 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668D22798B7B300A8C447 /* AppDelegate.swift */; };
 		6B5668D52798B7B300A8C447 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668D42798B7B300A8C447 /* SceneDelegate.swift */; };
-		6B5668D72798B7B300A8C447 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668D62798B7B300A8C447 /* ViewController.swift */; };
+		6B5668D72798B7B300A8C447 /* NamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668D62798B7B300A8C447 /* NamesViewController.swift */; };
 		6B5668DA2798B7B300A8C447 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5668D82798B7B300A8C447 /* Main.storyboard */; };
 		6B5668DD2798B7B300A8C447 /* Dividio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668DB2798B7B300A8C447 /* Dividio.xcdatamodeld */; };
 		6B5668DF2798B7BD00A8C447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B5668DE2798B7BD00A8C447 /* Assets.xcassets */; };
 		6B5668E22798B7BD00A8C447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5668E02798B7BD00A8C447 /* LaunchScreen.storyboard */; };
+		6B5668EB2798BED500A8C447 /* WhiteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668EA2798BED500A8C447 /* WhiteTextField.swift */; };
+		6B5668EF2798CD7800A8C447 /* TableLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668EE2798CD7800A8C447 /* TableLayout.swift */; };
+		6B5668F12798DBD900A8C447 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668F02798DBD900A8C447 /* Person.swift */; };
+		6B5E579F279A2287007DCE76 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E579E279A2287007DCE76 /* ItemsViewController.swift */; };
+		6B5E57A3279A484D007DCE76 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57A2279A484D007DCE76 /* CurrencyTextField.swift */; };
+		6B5E57A5279CB609007DCE76 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57A4279CB609007DCE76 /* PurpleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6B5668CF2798B7B300A8C447 /* Dividio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dividio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5668D22798B7B300A8C447 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B5668D42798B7B300A8C447 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6B5668D62798B7B300A8C447 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6B5668D62798B7B300A8C447 /* NamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesViewController.swift; sourceTree = "<group>"; };
 		6B5668D92798B7B300A8C447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B5668DC2798B7B300A8C447 /* Dividio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dividio.xcdatamodel; sourceTree = "<group>"; };
 		6B5668DE2798B7BD00A8C447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B5668E12798B7BD00A8C447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B5668E32798B7BD00A8C447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B5668EA2798BED500A8C447 /* WhiteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteTextField.swift; sourceTree = "<group>"; };
+		6B5668EE2798CD7800A8C447 /* TableLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableLayout.swift; sourceTree = "<group>"; };
+		6B5668F02798DBD900A8C447 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		6B5E579E279A2287007DCE76 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		6B5E57A2279A484D007DCE76 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		6B5E57A4279CB609007DCE76 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +70,11 @@
 		6B5668D12798B7B300A8C447 /* Dividio */ = {
 			isa = PBXGroup;
 			children = (
+				6B5668E92798BE8800A8C447 /* Classes */,
 				6B5668D22798B7B300A8C447 /* AppDelegate.swift */,
 				6B5668D42798B7B300A8C447 /* SceneDelegate.swift */,
-				6B5668D62798B7B300A8C447 /* ViewController.swift */,
+				6B5668D62798B7B300A8C447 /* NamesViewController.swift */,
+				6B5E579E279A2287007DCE76 /* ItemsViewController.swift */,
 				6B5668D82798B7B300A8C447 /* Main.storyboard */,
 				6B5668DE2798B7BD00A8C447 /* Assets.xcassets */,
 				6B5668E02798B7BD00A8C447 /* LaunchScreen.storyboard */,
@@ -68,6 +82,18 @@
 				6B5668DB2798B7B300A8C447 /* Dividio.xcdatamodeld */,
 			);
 			path = Dividio;
+			sourceTree = "<group>";
+		};
+		6B5668E92798BE8800A8C447 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6B5668EA2798BED500A8C447 /* WhiteTextField.swift */,
+				6B5E57A2279A484D007DCE76 /* CurrencyTextField.swift */,
+				6B5668EE2798CD7800A8C447 /* TableLayout.swift */,
+				6B5668F02798DBD900A8C447 /* Person.swift */,
+				6B5E57A4279CB609007DCE76 /* PurpleButton.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +167,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B5668EF2798CD7800A8C447 /* TableLayout.swift in Sources */,
 				6B5668DD2798B7B300A8C447 /* Dividio.xcdatamodeld in Sources */,
-				6B5668D72798B7B300A8C447 /* ViewController.swift in Sources */,
+				6B5668D72798B7B300A8C447 /* NamesViewController.swift in Sources */,
 				6B5668D32798B7B300A8C447 /* AppDelegate.swift in Sources */,
+				6B5668F12798DBD900A8C447 /* Person.swift in Sources */,
+				6B5E57A5279CB609007DCE76 /* PurpleButton.swift in Sources */,
+				6B5E579F279A2287007DCE76 /* ItemsViewController.swift in Sources */,
+				6B5668EB2798BED500A8C447 /* WhiteTextField.swift in Sources */,
+				6B5E57A3279A484D007DCE76 /* CurrencyTextField.swift in Sources */,
 				6B5668D52798B7B300A8C447 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
