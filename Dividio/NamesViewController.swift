@@ -17,10 +17,6 @@ class NamesViewController: UIViewController {
     @IBOutlet weak var addPersonButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
     
-    class NameCell: UITableViewCell {
-        @IBOutlet var cellText: UILabel?
-    }
-    
     @IBAction func addPerson(_ sender: Any) {
         if let newName = textField.text, !newName.isEmpty {
             names.insert(Person.init(name: newName), at: 0);

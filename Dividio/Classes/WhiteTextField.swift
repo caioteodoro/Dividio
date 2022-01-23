@@ -11,7 +11,7 @@ import UIKit
 
 @IBDesignable open class WhiteTextField: UITextField {
 
-        func setup() {
+    func setup() {
         self.layer.borderColor = #colorLiteral(red: 0.2705882353, green: 0.2705882353, blue: 0.2705882353, alpha: 1);
         self.layer.borderWidth = 3.0;
         self.layer.shadowColor = #colorLiteral(red: 0.4705882353, green: 0.3529411765, blue: 0.8078431373, alpha: 1)

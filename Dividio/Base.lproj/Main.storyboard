@@ -128,50 +128,80 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o que foi comprado?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHs-Xm-B1q">
-                                <rect key="frame" x="49" y="118" width="320" height="24"/>
+                                <rect key="frame" x="49" y="118" width="320" height="23.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23.5" id="6UB-nN-1f0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nome do item" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Lfm-6D-Jdg" customClass="WhiteTextField" customModule="Dividio" customModuleProvider="target">
-                                <rect key="frame" x="49" y="142" width="320" height="50"/>
+                                <rect key="frame" x="49" y="141.5" width="320" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="gEe-Nz-ucy"/>
+                                    <constraint firstAttribute="height" constant="45" id="qUe-hA-yBT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0,00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kot-Tv-CZX" customClass="CurrencyTextField" customModule="Dividio" customModuleProvider="target">
-                                <rect key="frame" x="49" y="211" width="320" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8VA-Jd-Zaa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEY-ZW-8be" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
-                                <rect key="frame" x="45" y="280" width="324" height="45"/>
+                                <rect key="frame" x="45" y="269.5" width="324" height="45"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.35294117650000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="ZGN-Ko-zA7"/>
+                                    <constraint firstAttribute="height" constant="45" id="iR6-6A-rKY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addItem:" destination="0du-Vp-LKi" eventType="touchUpInside" id="BmU-as-A7c"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B5p-m6-8Oy" customClass="TableLayout" customModule="Dividio" customModuleProvider="target">
-                                <rect key="frame" x="45" y="340" width="324" height="323"/>
+                                <rect key="frame" x="45" y="329.5" width="324" height="333.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="nameCell" id="TAd-hh-3nO" customClass="EditTableViewCell" customModule="Dividio" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="itemCell" id="TAd-hh-3nO" customClass="ItemCell" customModule="Dividio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="324" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TAd-hh-3nO" id="9BB-M5-OWH">
                                             <rect key="frame" x="0.0" y="0.0" width="324" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="CEh-sx-egP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="324" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daa-CA-tzh">
+                                                            <rect key="frame" x="0.0" y="0.0" width="178.5" height="43.5"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8X-Dw-9Jz">
+                                                            <rect key="frame" x="178.5" y="0.0" width="145.5" height="43.5"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="ocd-Ig-8M2"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CEh-sx-egP" firstAttribute="top" secondItem="9BB-M5-OWH" secondAttribute="topMargin" constant="-11" id="4Mp-IO-4mE"/>
+                                                <constraint firstItem="CEh-sx-egP" firstAttribute="leading" secondItem="9BB-M5-OWH" secondAttribute="leadingMargin" constant="-20" id="5X8-98-X1W"/>
+                                                <constraint firstItem="CEh-sx-egP" firstAttribute="centerY" secondItem="9BB-M5-OWH" secondAttribute="centerY" id="dXd-Mc-mJd"/>
+                                                <constraint firstItem="CEh-sx-egP" firstAttribute="centerX" secondItem="9BB-M5-OWH" secondAttribute="centerX" id="xFh-uV-Rp2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="itemNameLabel" destination="Daa-CA-tzh" id="q8o-Eu-BXE"/>
+                                            <outlet property="itemPriceLabel" destination="A8X-Dw-9Jz" id="lkP-nO-q0T"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -179,35 +209,42 @@
                                 <rect key="frame" x="45" y="738" width="324" height="45"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.35294117650000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Bbr-Ie-OlX"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="FQE-mP-Z3w"/>
+                                    <constraint firstAttribute="height" constant="45" id="2tm-OV-g3A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="continuar"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0,00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Pl-vI-ELH" customClass="WhiteTextField" customModule="Dividio" customModuleProvider="target">
+                                <rect key="frame" x="49" y="205.5" width="320" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="QiD-Tj-Fe7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="qEY-ZW-8be" firstAttribute="leading" secondItem="Bmw-s5-GdH" secondAttribute="leading" constant="45" id="9Ob-LA-ItE"/>
-                            <constraint firstItem="Lfm-6D-Jdg" firstAttribute="top" secondItem="xHs-Xm-B1q" secondAttribute="bottom" id="BV9-mG-Pc6"/>
-                            <constraint firstItem="Bmw-s5-GdH" firstAttribute="trailing" secondItem="Lfm-6D-Jdg" secondAttribute="trailing" constant="45" id="Eor-ya-iBq"/>
-                            <constraint firstItem="Bmw-s5-GdH" firstAttribute="trailing" secondItem="B5p-m6-8Oy" secondAttribute="trailing" constant="45" id="F7k-A5-SzO"/>
-                            <constraint firstItem="Kot-Tv-CZX" firstAttribute="leading" secondItem="Bmw-s5-GdH" secondAttribute="leading" constant="49" id="OsW-zF-eim"/>
-                            <constraint firstItem="xHs-Xm-B1q" firstAttribute="top" secondItem="Bmw-s5-GdH" secondAttribute="top" constant="30" id="RnJ-7N-iAl"/>
-                            <constraint firstItem="Bmw-s5-GdH" firstAttribute="trailing" secondItem="Bbl-Mt-ARv" secondAttribute="trailing" constant="45" id="UYq-uM-PkW"/>
-                            <constraint firstItem="Bmw-s5-GdH" firstAttribute="bottom" secondItem="Bbl-Mt-ARv" secondAttribute="bottom" constant="30" id="WOH-ds-0t7"/>
-                            <constraint firstItem="Kot-Tv-CZX" firstAttribute="top" secondItem="Lfm-6D-Jdg" secondAttribute="bottom" constant="19" id="Wnj-VX-eqB"/>
-                            <constraint firstItem="Bmw-s5-GdH" firstAttribute="trailing" secondItem="Kot-Tv-CZX" secondAttribute="trailing" constant="45" id="Xpe-2k-w4D"/>
-                            <constraint firstItem="B5p-m6-8Oy" firstAttribute="leading" secondItem="Bmw-s5-GdH" secondAttribute="leading" constant="45" id="deX-5e-MDH"/>
-                            <constraint firstItem="Bbl-Mt-ARv" firstAttribute="leading" secondItem="Bmw-s5-GdH" secondAttribute="leading" constant="45" id="dwc-iJ-wQZ"/>
-                            <constraint firstItem="xHs-Xm-B1q" firstAttribute="leading" secondItem="Bmw-s5-GdH" secondAttribute="leading" constant="49" id="e6C-eF-moy"/>
-                            <constraint firstItem="B5p-m6-8Oy" firstAttribute="top" secondItem="qEY-ZW-8be" secondAttribute="bottom" constant="15" id="lb7-Io-h5Q"/>
-                            <constraint firstItem="qEY-ZW-8be" firstAttribute="top" secondItem="Kot-Tv-CZX" secondAttribute="bottom" constant="19" id="nu8-Hv-lBO"/>
-                            <constraint firstItem="Lfm-6D-Jdg" firstAttribute="leading" secondItem="Bmw-s5-GdH" secondAttribute="leading" constant="49" id="pvW-rB-GOG"/>
-                            <constraint firstItem="Bbl-Mt-ARv" firstAttribute="top" secondItem="B5p-m6-8Oy" secondAttribute="bottom" constant="75" id="qUV-gc-pFw"/>
-                            <constraint firstItem="Bmw-s5-GdH" firstAttribute="trailing" secondItem="xHs-Xm-B1q" secondAttribute="trailing" constant="45" id="ryC-Iv-6d9"/>
-                            <constraint firstItem="Bmw-s5-GdH" firstAttribute="trailing" secondItem="qEY-ZW-8be" secondAttribute="trailing" constant="45" id="tpq-Od-8nl"/>
+                            <constraint firstItem="Lfm-6D-Jdg" firstAttribute="top" secondItem="xHs-Xm-B1q" secondAttribute="bottom" id="5wo-Lt-CNW"/>
+                            <constraint firstItem="Lfm-6D-Jdg" firstAttribute="leading" secondItem="5Pl-vI-ELH" secondAttribute="leading" id="FC1-Ua-2pH"/>
+                            <constraint firstItem="Lfm-6D-Jdg" firstAttribute="leading" secondItem="xHs-Xm-B1q" secondAttribute="leading" id="GCY-pg-lxD"/>
+                            <constraint firstItem="Bbl-Mt-ARv" firstAttribute="top" secondItem="B5p-m6-8Oy" secondAttribute="bottom" constant="75" id="JSE-TP-4ov"/>
+                            <constraint firstItem="B5p-m6-8Oy" firstAttribute="trailing" secondItem="Bbl-Mt-ARv" secondAttribute="trailing" id="Jez-5H-pCQ"/>
+                            <constraint firstItem="5Pl-vI-ELH" firstAttribute="trailing" secondItem="qEY-ZW-8be" secondAttribute="trailing" id="KwY-C2-a3S"/>
+                            <constraint firstItem="xHs-Xm-B1q" firstAttribute="top" secondItem="Bmw-s5-GdH" secondAttribute="top" constant="30" id="N2P-x9-E7Y"/>
+                            <constraint firstItem="qEY-ZW-8be" firstAttribute="trailing" secondItem="B5p-m6-8Oy" secondAttribute="trailing" id="S96-q4-jCH"/>
+                            <constraint firstItem="qEY-ZW-8be" firstAttribute="leading" secondItem="Bmw-s5-GdH" secondAttribute="leading" constant="45" id="Xjy-oQ-Qfd"/>
+                            <constraint firstItem="qEY-ZW-8be" firstAttribute="top" secondItem="5Pl-vI-ELH" secondAttribute="bottom" constant="19" id="ZIL-6P-DDk"/>
+                            <constraint firstItem="5Pl-vI-ELH" firstAttribute="top" secondItem="Lfm-6D-Jdg" secondAttribute="bottom" constant="19" id="ZTf-8z-Bqv"/>
+                            <constraint firstItem="xHs-Xm-B1q" firstAttribute="leading" secondItem="Bmw-s5-GdH" secondAttribute="leading" constant="49" id="hE7-2m-pbx"/>
+                            <constraint firstItem="qEY-ZW-8be" firstAttribute="centerX" secondItem="B1I-eQ-lgC" secondAttribute="centerX" id="im3-67-kGU"/>
+                            <constraint firstItem="qEY-ZW-8be" firstAttribute="leading" secondItem="B5p-m6-8Oy" secondAttribute="leading" id="lLb-cS-wfj"/>
+                            <constraint firstItem="Bmw-s5-GdH" firstAttribute="bottom" secondItem="Bbl-Mt-ARv" secondAttribute="bottom" constant="30" id="poC-tu-4DZ"/>
+                            <constraint firstItem="Lfm-6D-Jdg" firstAttribute="trailing" secondItem="xHs-Xm-B1q" secondAttribute="trailing" id="qKa-5r-Nz2"/>
+                            <constraint firstItem="B5p-m6-8Oy" firstAttribute="leading" secondItem="Bbl-Mt-ARv" secondAttribute="leading" id="sYf-A7-iWz"/>
+                            <constraint firstItem="Lfm-6D-Jdg" firstAttribute="trailing" secondItem="5Pl-vI-ELH" secondAttribute="trailing" id="vVj-iM-FtY"/>
+                            <constraint firstItem="B5p-m6-8Oy" firstAttribute="top" secondItem="qEY-ZW-8be" secondAttribute="bottom" constant="15" id="wZr-ce-4ab"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bmw-s5-GdH"/>
                     </view>
@@ -215,7 +252,11 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="currencyTextField" destination="Kot-Tv-CZX" id="afH-h4-zsN"/>
+                        <outlet property="addItemButton" destination="qEY-ZW-8be" id="htB-UU-qAx"/>
+                        <outlet property="continueButton" destination="Bbl-Mt-ARv" id="Y1q-1N-T1f"/>
+                        <outlet property="itemsTableView" destination="B5p-m6-8Oy" id="K3D-CZ-GkR"/>
+                        <outlet property="nameTextField" destination="Lfm-6D-Jdg" id="MYE-mc-bEb"/>
+                        <outlet property="priceTextField" destination="5Pl-vI-ELH" id="VNY-LG-aGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goS-20-KMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

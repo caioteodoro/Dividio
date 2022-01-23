@@ -9,9 +9,9 @@ class Person {
 
 class Item {
     var name: String;
-    var value: Double;
-    init() {
-        name = "Carne";
-        value = 10.00;
+    var price: Double;
+    init(name: String, price: Double) {
+        self.name = name;
+        self.price = price;
     }
 }
