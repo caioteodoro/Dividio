@@ -21,6 +21,7 @@
 		6B5E57A3279A484D007DCE76 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57A2279A484D007DCE76 /* CurrencyTextField.swift */; };
 		6B5E57A5279CB609007DCE76 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57A4279CB609007DCE76 /* PurpleButton.swift */; };
 		6B5E57A7279CF7F9007DCE76 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57A6279CF7F9007DCE76 /* ItemCell.swift */; };
+		6B5E57AA279D227A007DCE76 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57A8279D227A007DCE76 /* PaymentsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		6B5E57A2279A484D007DCE76 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		6B5E57A4279CB609007DCE76 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
 		6B5E57A6279CF7F9007DCE76 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		6B5E57A8279D227A007DCE76 /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				6B5668E92798BE8800A8C447 /* Classes */,
 				6B5668D22798B7B300A8C447 /* AppDelegate.swift */,
 				6B5668D42798B7B300A8C447 /* SceneDelegate.swift */,
+				6B5E57A8279D227A007DCE76 /* PaymentsViewController.swift */,
 				6B5668D62798B7B300A8C447 /* NamesViewController.swift */,
 				6B5E579E279A2287007DCE76 /* ItemsViewController.swift */,
 				6B5668D82798B7B300A8C447 /* Main.storyboard */,
@@ -173,6 +176,7 @@
 				6B5668EF2798CD7800A8C447 /* TableLayout.swift in Sources */,
 				6B5668DD2798B7B300A8C447 /* Dividio.xcdatamodeld in Sources */,
 				6B5668D72798B7B300A8C447 /* NamesViewController.swift in Sources */,
+				6B5E57AA279D227A007DCE76 /* PaymentsViewController.swift in Sources */,
 				6B5E57A7279CF7F9007DCE76 /* ItemCell.swift in Sources */,
 				6B5668D32798B7B300A8C447 /* AppDelegate.swift in Sources */,
 				6B5668F12798DBD900A8C447 /* Person.swift in Sources */,
