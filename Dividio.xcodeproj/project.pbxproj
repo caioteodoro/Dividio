@@ -22,6 +22,7 @@
 		6B5E57A5279CB609007DCE76 /* PurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57A4279CB609007DCE76 /* PurpleButton.swift */; };
 		6B5E57A7279CF7F9007DCE76 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57A6279CF7F9007DCE76 /* ItemCell.swift */; };
 		6B5E57AA279D227A007DCE76 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57A8279D227A007DCE76 /* PaymentsViewController.swift */; };
+		6B5E57AD279E2B42007DCE76 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57AC279E2B42007DCE76 /* CustomPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		6B5E57A4279CB609007DCE76 /* PurpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleButton.swift; sourceTree = "<group>"; };
 		6B5E57A6279CF7F9007DCE76 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		6B5E57A8279D227A007DCE76 /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		6B5E57AC279E2B42007DCE76 /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				6B5668F02798DBD900A8C447 /* Person.swift */,
 				6B5E57A4279CB609007DCE76 /* PurpleButton.swift */,
 				6B5E57A6279CF7F9007DCE76 /* ItemCell.swift */,
+				6B5E57AC279E2B42007DCE76 /* CustomPickerView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				6B5668D32798B7B300A8C447 /* AppDelegate.swift in Sources */,
 				6B5668F12798DBD900A8C447 /* Person.swift in Sources */,
 				6B5E57A5279CB609007DCE76 /* PurpleButton.swift in Sources */,
+				6B5E57AD279E2B42007DCE76 /* CustomPickerView.swift in Sources */,
 				6B5E579F279A2287007DCE76 /* ItemsViewController.swift in Sources */,
 				6B5668EB2798BED500A8C447 /* WhiteTextField.swift in Sources */,
 				6B5E57A3279A484D007DCE76 /* CurrencyTextField.swift in Sources */,

@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol SendDataDelegateProtocol {
+    func sendDataToPaymentsViewController (myData: [Person])
+}
+
 class NamesViewController: UIViewController {
     
     var names: [Person] = []
+    var delegate: SendDataDelegateProtocol? = nil;
     
     @IBOutlet weak var namesTableView: UITableView!
     @IBOutlet weak var textField: UITextField!
@@ -19,7 +24,7 @@ class NamesViewController: UIViewController {
     
     @IBAction func addPerson(_ sender: Any) {
         if let newName = textField.text, !newName.isEmpty {
-            names.insert(Person.init(name: newName), at: 0);
+            names.insert(Person.init(name: newName, payment: 0), at: 0);
             namesTableView.beginUpdates();
             namesTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right);
             namesTableView.endUpdates();
@@ -28,18 +33,27 @@ class NamesViewController: UIViewController {
         }
     }
     
+    @IBAction func sendDataThroughContinueButton(_ sender: Any) {
+        if self.delegate != nil {
+            let dataToBeSent = names;
+            self.delegate?.sendDataToPaymentsViewController(myData: dataToBeSent)
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    
+    
+    func allowContinueButton () {
+        if names.isEmpty == true { continueButton.isEnabled = false;
+        } else { continueButton.isEnabled = true; }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         namesTableView.dataSource = self;
         namesTableView.tableFooterView = UIView(frame: .zero);
         allowContinueButton ()
     }
-    
-    func allowContinueButton () {
-        if names.isEmpty == true { continueButton.isEnabled = false;
-    } else { continueButton.isEnabled = true; }
-    }
-    
 }
 
 

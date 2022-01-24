@@ -2,8 +2,10 @@ import Foundation
 
 class Person {
     var name: String;
-    init(name: String) {
+    var payment: Double;
+    init(name: String, payment: Double) {
         self.name = name;
+        self.payment = payment;
     }
 }
 

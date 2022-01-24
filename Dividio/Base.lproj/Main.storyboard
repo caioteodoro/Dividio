@@ -54,7 +54,8 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="continuar"/>
                                 <connections>
-                                    <segue destination="0du-Vp-LKi" kind="presentation" modalPresentationStyle="fullScreen" id="pNZ-r8-slk"/>
+                                    <action selector="sendDataThroughContinueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ajt-w3-Nnq"/>
+                                    <segue destination="0du-Vp-LKi" kind="presentation" identifier="namesToItemsSegue" modalPresentationStyle="fullScreen" id="pNZ-r8-slk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dH-gY-6bd" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
@@ -366,7 +367,7 @@
                                     <action selector="addItem:" destination="0du-Vp-LKi" eventType="touchUpInside" id="w6R-0W-rNR"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLb-Ig-LIY">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLb-Ig-LIY" customClass="CustomPickerView" customModule="Dividio" customModuleProvider="target">
                                 <rect key="frame" x="45" y="141.5" width="324" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Wdm-nx-0r6"/>
@@ -399,6 +400,9 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="personPicker" destination="NLb-Ig-LIY" id="Lm8-EK-Qcl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBJ-9C-uT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
