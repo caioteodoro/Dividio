@@ -218,7 +218,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="continuar"/>
                                 <connections>
-                                    <segue destination="IQV-R9-1fw" kind="presentation" modalPresentationStyle="fullScreen" id="9Jv-UA-ZDC"/>
+                                    <segue destination="IQV-R9-1fw" kind="presentation" identifier="itemsToPaymentsSegue" modalPresentationStyle="fullScreen" id="9Jv-UA-ZDC"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0,00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Pl-vI-ELH" customClass="WhiteTextField" customModule="Dividio" customModuleProvider="target">

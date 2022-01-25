@@ -16,6 +16,7 @@ class ItemsViewController: UIViewController {
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
     
+    var people: [Person] = []
     var items: [Item] = []
     
     @IBAction func addItem(_ sender: Any) {
@@ -41,6 +42,14 @@ class ItemsViewController: UIViewController {
     func allowContinueButton () {
         if items.isEmpty == true { continueButton.isEnabled = false;
         } else { continueButton.isEnabled = true; }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "itemsToPaymentsSegue" {
+            let destinationViewController: PaymentsViewController = segue.destination as! PaymentsViewController
+            destinationViewController.items = self.items;
+            destinationViewController.people = self.people;
+        }
     }
         
 }

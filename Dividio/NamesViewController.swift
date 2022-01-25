@@ -8,14 +8,9 @@
 
 import UIKit
 
-protocol SendDataDelegateProtocol {
-    func sendDataToPaymentsViewController (myData: [Person])
-}
-
 class NamesViewController: UIViewController {
     
     var names: [Person] = []
-    var delegate: SendDataDelegateProtocol? = nil;
     
     @IBOutlet weak var namesTableView: UITableView!
     @IBOutlet weak var textField: UITextField!
@@ -34,11 +29,6 @@ class NamesViewController: UIViewController {
     }
     
     @IBAction func sendDataThroughContinueButton(_ sender: Any) {
-        if self.delegate != nil {
-            let dataToBeSent = names;
-            self.delegate?.sendDataToPaymentsViewController(myData: dataToBeSent)
-            dismiss(animated: true, completion: nil)
-        }
         
     }
     
@@ -53,6 +43,13 @@ class NamesViewController: UIViewController {
         namesTableView.dataSource = self;
         namesTableView.tableFooterView = UIView(frame: .zero);
         allowContinueButton ()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "namesToItemsSegue" {
+            let destinationViewController: ItemsViewController = segue.destination as! ItemsViewController
+            destinationViewController.people = names;
+        }
     }
 }
 
