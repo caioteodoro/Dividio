@@ -367,8 +367,8 @@
                                     <action selector="addItem:" destination="0du-Vp-LKi" eventType="touchUpInside" id="w6R-0W-rNR"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLb-Ig-LIY" customClass="CustomPickerView" customModule="Dividio" customModuleProvider="target">
-                                <rect key="frame" x="45" y="141.5" width="324" height="45"/>
+                            <pickerView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLb-Ig-LIY" customClass="CustomPickerView" customModule="Dividio" customModuleProvider="target">
+                                <rect key="frame" x="184.5" y="2" width="45.000000000000028" height="324"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Wdm-nx-0r6"/>
                                 </constraints>
