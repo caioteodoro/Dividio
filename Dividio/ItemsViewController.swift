@@ -22,7 +22,8 @@ class ItemsViewController: UIViewController {
     @IBAction func addItem(_ sender: Any) {
         let newItemName = nameTextField.text
         let newItemPrice = priceTextField.text
-        if !newItemName!.isEmpty && !newItemPrice!.isEmpty{            items.insert(Item.init(name: newItemName!, price: Double(newItemPrice!) ?? 0.0), at: 0);
+        if !newItemName!.isEmpty && !newItemPrice!.isEmpty{
+            items.insert(Item.init(name: newItemName!, price: Double(newItemPrice!) ?? 0.0), at: 0);
             itemsTableView.beginUpdates();
             itemsTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right);
             itemsTableView.endUpdates();
