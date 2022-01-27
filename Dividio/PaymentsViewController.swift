@@ -79,12 +79,8 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func paymentsPickerViewSettings () {
-        let rotationAngle: CGFloat! = -90  * (.pi/180)
-            let y = personPicker.frame.origin.y;
-            personPicker.layer.shadowColor = #colorLiteral(red: 0.4705882353, green: 0.3529411765, blue: 0.8078431373, alpha: 1)
-            personPicker.layer.shadowOffset = CGSize(width: -4, height: 4);
-            personPicker.transform = CGAffineTransform(rotationAngle: rotationAngle);
-            personPicker.frame = CGRect(x: paymentTextField.frame.origin.x, y: y - 15, width: view.frame.width - 94, height: 45)
+        personPicker.transform = CGAffineTransform(rotationAngle: -90  * (.pi/180));
+        personPicker.frame = CGRect(x: 0, y: 0, width: view.frame.width - 94, height: 45)
     }
     
     override func viewDidLoad() {
