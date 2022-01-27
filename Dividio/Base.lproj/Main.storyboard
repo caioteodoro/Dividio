@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,10 +33,10 @@
                             </textField>
                             <tableView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Cm-K3-jUP" customClass="TableLayout" customModule="Dividio" customModuleProvider="target">
                                 <rect key="frame" x="45" y="270.5" width="324" height="452.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="nameCell" id="Crs-ZO-Plr">
-                                        <rect key="frame" x="0.0" y="28" width="324" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="324" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Crs-ZO-Plr" id="esI-Ll-I7O">
                                             <rect key="frame" x="0.0" y="0.0" width="324" height="43.5"/>
@@ -44,7 +46,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihl-Xs-NFq" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihl-Xs-NFq" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
                                 <rect key="frame" x="45" y="738" width="324" height="45"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.35294117650000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -58,7 +60,7 @@
                                     <segue destination="0du-Vp-LKi" kind="presentation" identifier="namesToItemsSegue" modalPresentationStyle="fullScreen" id="pNZ-r8-slk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dH-gY-6bd" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dH-gY-6bd" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
                                 <rect key="frame" x="45" y="210.5" width="154.5" height="45"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.35294117650000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -68,7 +70,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="convidar contato"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ3-oD-XDL" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ3-oD-XDL" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
                                 <rect key="frame" x="214.5" y="210.5" width="154.5" height="45"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.35294117650000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -82,7 +84,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GYb-H6-P2F" secondAttribute="trailing" constant="45" id="0FP-GU-6EM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ihl-Xs-NFq" secondAttribute="trailing" constant="45" id="0nu-aF-uzL"/>
@@ -105,7 +108,6 @@
                             <constraint firstItem="ihl-Xs-NFq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="uZp-UX-dXe"/>
                             <constraint firstItem="RQ3-oD-XDL" firstAttribute="width" secondItem="1dH-gY-6bd" secondAttribute="width" id="wtg-c1-ZJP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -145,7 +147,7 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEY-ZW-8be" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEY-ZW-8be" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
                                 <rect key="frame" x="45" y="269.5" width="324" height="45"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.35294117650000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -161,10 +163,10 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B5p-m6-8Oy" customClass="TableLayout" customModule="Dividio" customModuleProvider="target">
                                 <rect key="frame" x="45" y="329.5" width="324" height="333.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="itemCell" id="TAd-hh-3nO" customClass="ItemCell" customModule="Dividio" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="324" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="324" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TAd-hh-3nO" id="9BB-M5-OWH">
                                             <rect key="frame" x="0.0" y="0.0" width="324" height="43.5"/>
@@ -208,7 +210,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbl-Mt-ARv" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbl-Mt-ARv" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
                                 <rect key="frame" x="45" y="738" width="324" height="45"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.35294117650000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -230,7 +232,8 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Bmw-s5-GdH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Lfm-6D-Jdg" firstAttribute="top" secondItem="xHs-Xm-B1q" secondAttribute="bottom" id="5wo-Lt-CNW"/>
                             <constraint firstItem="Lfm-6D-Jdg" firstAttribute="leading" secondItem="5Pl-vI-ELH" secondAttribute="leading" id="FC1-Ua-2pH"/>
@@ -252,7 +255,6 @@
                             <constraint firstItem="Lfm-6D-Jdg" firstAttribute="trailing" secondItem="5Pl-vI-ELH" secondAttribute="trailing" id="vVj-iM-FtY"/>
                             <constraint firstItem="B5p-m6-8Oy" firstAttribute="top" secondItem="qEY-ZW-8be" secondAttribute="bottom" constant="15" id="wZr-ce-4ab"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Bmw-s5-GdH"/>
                     </view>
                     <navigationItem key="navigationItem" id="OzA-2k-O83"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -278,7 +280,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quem pagou e quanto pagou?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMf-v2-M0a">
-                                <rect key="frame" x="45" y="118" width="324" height="23.5"/>
+                                <rect key="frame" x="45" y="118" width="324" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23.5" id="vd0-Uc-pd9"/>
                                 </constraints>
@@ -287,19 +289,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0,00" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2M8-hu-cv0" customClass="WhiteTextField" customModule="Dividio" customModuleProvider="target">
-                                <rect key="frame" x="49" y="201.5" width="320" height="45"/>
+                                <rect key="frame" x="49" y="201" width="320" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="H0z-gG-rC4"/>
+                                    <constraint firstAttribute="height" constant="45" id="nKW-sV-ydX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f8f-7Y-dkR" customClass="TableLayout" customModule="Dividio" customModuleProvider="target">
-                                <rect key="frame" x="45" y="325.5" width="324" height="337.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="45" y="325" width="324" height="338"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="itemCell" id="fU1-op-DNm" customClass="ItemCell" customModule="Dividio" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="324" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="324" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fU1-op-DNm" id="h6z-FW-DjR">
                                             <rect key="frame" x="0.0" y="0.0" width="324" height="43.5"/>
@@ -343,7 +345,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPl-Ud-Dj8" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPl-Ud-Dj8" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
                                 <rect key="frame" x="45" y="738" width="324" height="45"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.35294117650000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -353,8 +355,8 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="continuar"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV7-Rt-5Ti" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
-                                <rect key="frame" x="45" y="265.5" width="324" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV7-Rt-5Ti" customClass="PurpleButton" customModule="Dividio" customModuleProvider="target">
+                                <rect key="frame" x="45" y="265" width="324" height="45"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.35294117650000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jzS-5x-H3W"/>
@@ -365,42 +367,52 @@
                                 </state>
                                 <connections>
                                     <action selector="addItem:" destination="0du-Vp-LKi" eventType="touchUpInside" id="w6R-0W-rNR"/>
+                                    <action selector="addPaymentButton:" destination="IQV-R9-1fw" eventType="touchUpInside" id="8Jd-Y7-uhe"/>
                                 </connections>
                             </button>
-                            <pickerView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLb-Ig-LIY" customClass="CustomPickerView" customModule="Dividio" customModuleProvider="target">
-                                <rect key="frame" x="184.5" y="2" width="45.000000000000028" height="324"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCb-pq-8UW">
+                                <rect key="frame" x="49" y="141" width="320" height="45"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Wdm-nx-0r6"/>
+                                    <constraint firstAttribute="height" constant="45" id="i8x-kJ-emD"/>
                                 </constraints>
+                            </view>
+                            <pickerView clipsSubviews="YES" contentMode="scaleToFill" id="NLb-Ig-LIY" customClass="CustomPickerView" customModule="Dividio" customModuleProvider="target">
+                                <rect key="frame" x="49" y="141" width="320" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="8KU-XK-RTF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jCb-pq-8UW" firstAttribute="top" secondItem="EMf-v2-M0a" secondAttribute="bottom" id="2V3-7l-Lml"/>
                             <constraint firstItem="EMf-v2-M0a" firstAttribute="leading" secondItem="8KU-XK-RTF" secondAttribute="leading" constant="45" id="Aqm-4y-d5g"/>
                             <constraint firstItem="8KU-XK-RTF" firstAttribute="trailing" secondItem="f8f-7Y-dkR" secondAttribute="trailing" constant="45" id="BYx-Ja-LHW"/>
                             <constraint firstItem="oPl-Ud-Dj8" firstAttribute="top" secondItem="f8f-7Y-dkR" secondAttribute="bottom" constant="75" id="DWa-sr-HxL"/>
-                            <constraint firstItem="NLb-Ig-LIY" firstAttribute="leading" secondItem="8KU-XK-RTF" secondAttribute="leading" constant="45" id="Htu-6t-agW"/>
-                            <constraint firstAttribute="trailing" secondItem="NLb-Ig-LIY" secondAttribute="trailing" constant="45" id="JM4-py-7di"/>
                             <constraint firstItem="EMf-v2-M0a" firstAttribute="top" secondItem="8KU-XK-RTF" secondAttribute="top" constant="30" id="KWn-Xu-n31"/>
                             <constraint firstItem="8KU-XK-RTF" firstAttribute="trailing" secondItem="oPl-Ud-Dj8" secondAttribute="trailing" constant="45" id="aFg-2f-Gmc"/>
                             <constraint firstItem="8KU-XK-RTF" firstAttribute="bottom" secondItem="oPl-Ud-Dj8" secondAttribute="bottom" constant="30" id="ePo-9L-3Kd"/>
                             <constraint firstItem="8KU-XK-RTF" firstAttribute="trailing" secondItem="EMf-v2-M0a" secondAttribute="trailing" constant="45" id="fXO-ls-TKw"/>
                             <constraint firstItem="8KU-XK-RTF" firstAttribute="trailing" secondItem="mV7-Rt-5Ti" secondAttribute="trailing" constant="45" id="goe-3Q-wwN"/>
-                            <constraint firstItem="2M8-hu-cv0" firstAttribute="top" secondItem="NLb-Ig-LIY" secondAttribute="bottom" constant="15" id="mRg-av-7nZ"/>
+                            <constraint firstItem="2M8-hu-cv0" firstAttribute="top" secondItem="jCb-pq-8UW" secondAttribute="bottom" constant="15" id="kE1-eg-Zw5"/>
+                            <constraint firstItem="jCb-pq-8UW" firstAttribute="leading" secondItem="8KU-XK-RTF" secondAttribute="leading" constant="49" id="lWN-UN-fiv"/>
                             <constraint firstItem="mV7-Rt-5Ti" firstAttribute="top" secondItem="2M8-hu-cv0" secondAttribute="bottom" constant="19" id="nQR-4i-11C"/>
                             <constraint firstItem="oPl-Ud-Dj8" firstAttribute="leading" secondItem="8KU-XK-RTF" secondAttribute="leading" constant="45" id="oMB-pu-MGH"/>
                             <constraint firstItem="2M8-hu-cv0" firstAttribute="leading" secondItem="8KU-XK-RTF" secondAttribute="leading" constant="49" id="r5I-gc-V9X"/>
                             <constraint firstItem="mV7-Rt-5Ti" firstAttribute="leading" secondItem="8KU-XK-RTF" secondAttribute="leading" constant="45" id="r64-3C-r46"/>
+                            <constraint firstItem="NLb-Ig-LIY" firstAttribute="top" secondItem="EMf-v2-M0a" secondAttribute="bottom" id="rT7-K5-3Aa"/>
                             <constraint firstItem="8KU-XK-RTF" firstAttribute="trailing" secondItem="2M8-hu-cv0" secondAttribute="trailing" constant="45" id="tdn-Nz-hw4"/>
                             <constraint firstItem="f8f-7Y-dkR" firstAttribute="top" secondItem="mV7-Rt-5Ti" secondAttribute="bottom" constant="15" id="upa-rl-oaq"/>
+                            <constraint firstItem="8KU-XK-RTF" firstAttribute="trailing" secondItem="jCb-pq-8UW" secondAttribute="trailing" constant="45" id="vif-YR-0Ju"/>
                             <constraint firstItem="f8f-7Y-dkR" firstAttribute="leading" secondItem="8KU-XK-RTF" secondAttribute="leading" constant="45" id="x8p-sO-0Gm"/>
-                            <constraint firstItem="NLb-Ig-LIY" firstAttribute="top" secondItem="EMf-v2-M0a" secondAttribute="bottom" id="ylN-YZ-YZj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="8KU-XK-RTF"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="continueButton" destination="oPl-Ud-Dj8" id="ihS-bF-d6x"/>
+                        <outlet property="paymentTextField" destination="2M8-hu-cv0" id="LgD-D1-hd1"/>
+                        <outlet property="paymentsTableView" destination="f8f-7Y-dkR" id="9ep-f1-PJo"/>
                         <outlet property="personPicker" destination="NLb-Ig-LIY" id="Lm8-EK-Qcl"/>
                     </connections>
                 </viewController>
@@ -409,4 +421,26 @@
             <point key="canvasLocation" x="1595.6521739130435" y="111.83035714285714"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="2M8-hu-cv0">
+            <size key="intrinsicContentSize" width="96.5" height="34"/>
+        </designable>
+        <designable name="5Pl-vI-ELH">
+            <size key="intrinsicContentSize" width="96.5" height="34"/>
+        </designable>
+        <designable name="Lfm-6D-Jdg">
+            <size key="intrinsicContentSize" width="170.5" height="34"/>
+        </designable>
+        <designable name="NLb-Ig-LIY">
+            <size key="intrinsicContentSize" width="320" height="216"/>
+        </designable>
+        <designable name="ZCJ-So-Eql">
+            <size key="intrinsicContentSize" width="203" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
