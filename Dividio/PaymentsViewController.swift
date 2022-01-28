@@ -23,12 +23,6 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var continueButton: PurpleButton!
     @IBOutlet weak var testLabel: UILabel!
     
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selected = row
-    }
-    
-    
     @IBAction func addPaymentButton(_ sender: Any) {
         let newPayment = Double(paymentTextField.text!)
         if newPayment != nil {
@@ -38,22 +32,33 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             paymentsTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right);
             paymentsTableView.endUpdates();
             //nameTextField.text = ""; tem como mover o seletor de nomes automaticamente?
+            //personPicker.selectRow(0, inComponent: 1, animated: true)
             paymentTextField.text = "";
             allowContinueButton ()
         }
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selected = row
+    }
+    
     func allowContinueButton () {
-        //var paymentsAmount: Double = 0;
-        //for i in 0..<(people.count-1) {
-        //    paymentsAmount += people[i].payment;
-        //}
-        //if paymentsAmount == 0
         if listOfPayments == [] { continueButton.isEnabled = false;
         } else { continueButton.isEnabled = true; }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.personPicker.delegate = self;
+        self.personPicker.dataSource = self;
+        paymentsPickerViewSettings();
+        
+        paymentsTableView.dataSource = self;
+        paymentsTableView.tableFooterView = UIView(frame: .zero);
+        allowContinueButton ()
+    }
     
+    //PickerView Functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -82,18 +87,8 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         personPicker.transform = CGAffineTransform(rotationAngle: -90  * (.pi/180));
         personPicker.frame = CGRect(x: 0, y: 0, width: view.frame.width - 94, height: 45)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.personPicker.delegate = self;
-        self.personPicker.dataSource = self;
-        paymentsPickerViewSettings();
-        
-        paymentsTableView.dataSource = self;
-        paymentsTableView.tableFooterView = UIView(frame: .zero);
-        allowContinueButton ()
-    }
 }
+
 
 extension PaymentsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
