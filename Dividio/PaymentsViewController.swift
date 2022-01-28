@@ -21,6 +21,7 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var personPicker: CustomPickerView!
     @IBOutlet weak var paymentsTableView: TableLayout!
     @IBOutlet weak var continueButton: PurpleButton!
+    @IBOutlet weak var testLabel: UILabel!
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -29,9 +30,8 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     
     @IBAction func addPaymentButton(_ sender: Any) {
-        let newPersonName = people[selected].name
         let newPayment = Double(paymentTextField.text!)
-        if !newPersonName.isEmpty && newPayment != nil {
+        if newPayment != nil {
             people[selected].payment = newPayment!
             listOfPayments.insert(newPayment!, at: 0);
             paymentsTableView.beginUpdates();
@@ -97,7 +97,7 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
 extension PaymentsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return listOfPayments.count
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

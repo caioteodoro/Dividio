@@ -301,10 +301,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="paymentCell" id="fU1-op-DNm" customClass="ItemCell" customModule="Dividio" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="324" height="44"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="324" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fU1-op-DNm" id="h6z-FW-DjR">
-                                            <rect key="frame" x="0.0" y="0.0" width="324" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="324" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVJ-w4-uf2">
@@ -415,6 +415,7 @@
                         <outlet property="paymentTextField" destination="2M8-hu-cv0" id="LgD-D1-hd1"/>
                         <outlet property="paymentsTableView" destination="f8f-7Y-dkR" id="9ep-f1-PJo"/>
                         <outlet property="personPicker" destination="NLb-Ig-LIY" id="Lm8-EK-Qcl"/>
+                        <outlet property="testLabel" destination="EMf-v2-M0a" id="XZi-L8-o9V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBJ-9C-uT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
