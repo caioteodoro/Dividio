@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B0B4C2127A73B4800E70171 /* AssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0B4C2027A73B4800E70171 /* AssignmentViewController.swift */; };
 		6B5668D32798B7B300A8C447 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668D22798B7B300A8C447 /* AppDelegate.swift */; };
 		6B5668D52798B7B300A8C447 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668D42798B7B300A8C447 /* SceneDelegate.swift */; };
 		6B5668D72798B7B300A8C447 /* NamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5668D62798B7B300A8C447 /* NamesViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B0B4C2027A73B4800E70171 /* AssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentViewController.swift; sourceTree = "<group>"; };
 		6B5668CF2798B7B300A8C447 /* Dividio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dividio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B5668D22798B7B300A8C447 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B5668D42798B7B300A8C447 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				6B5668D62798B7B300A8C447 /* NamesViewController.swift */,
 				6B5E579E279A2287007DCE76 /* ItemsViewController.swift */,
 				6B5E57A8279D227A007DCE76 /* PaymentsViewController.swift */,
+				6B0B4C2027A73B4800E70171 /* AssignmentViewController.swift */,
 				6B5668D82798B7B300A8C447 /* Main.storyboard */,
 				6B5668DE2798B7BD00A8C447 /* Assets.xcassets */,
 				6B5668E02798B7BD00A8C447 /* LaunchScreen.storyboard */,
@@ -181,6 +184,7 @@
 				6B5668D72798B7B300A8C447 /* NamesViewController.swift in Sources */,
 				6B5E57AA279D227A007DCE76 /* PaymentsViewController.swift in Sources */,
 				6B5E57A7279CF7F9007DCE76 /* ItemCell.swift in Sources */,
+				6B0B4C2127A73B4800E70171 /* AssignmentViewController.swift in Sources */,
 				6B5668D32798B7B300A8C447 /* AppDelegate.swift in Sources */,
 				6B5668F12798DBD900A8C447 /* Person.swift in Sources */,
 				6B5E57A5279CB609007DCE76 /* PurpleButton.swift in Sources */,
