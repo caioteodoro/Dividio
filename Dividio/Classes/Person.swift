@@ -3,9 +3,11 @@ import Foundation
 class Person {
     var name: String;
     var payment: Double;
-    init(name: String, payment: Double) {
+    var consumedItems: [Double]
+    init(name: String, payment: Double, consumedItems: [Double]) {
         self.name = name;
         self.payment = payment;
+        self.consumedItems = consumedItems;
     }
 }
 

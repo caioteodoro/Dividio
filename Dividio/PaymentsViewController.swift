@@ -87,6 +87,14 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         personPicker.transform = CGAffineTransform(rotationAngle: -90  * (.pi/180));
         personPicker.frame = CGRect(x: 0, y: 0, width: view.frame.width - 94, height: 45)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "paymentsToAssignmentsSegue" {
+            let destinationViewController: AssignmentsViewController = segue.destination as! AssignmentsViewController
+            destinationViewController.items = self.items;
+            destinationViewController.people = self.people;
+        }
+    }
 }
 
 
