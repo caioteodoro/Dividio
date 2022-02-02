@@ -24,6 +24,21 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var continueButton: PurpleButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    @IBAction func segmentedControlChanged(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            break
+        case 1:
+            for i in 0...(people.count-1) {
+                let indexPath = IndexPath(row: i, section: 0)
+                peopleTableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)
+            }
+            
+        default:
+            break
+        }
+        
+    }
     
     
     
@@ -100,10 +115,13 @@ extension AssignmentsViewController: UITableViewDataSource, UITableViewDelegate 
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
     
+    
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        peopleTableView.deselectRow(at: indexPath, animated: true)
+//        segmentedControl.selectedSegmentIndex = 0;
+//        continueButton.backgroundColor = UIColor.red
+//    }
     
     
 }

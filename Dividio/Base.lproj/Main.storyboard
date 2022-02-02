@@ -512,6 +512,9 @@
                                     <segment title="alguns"/>
                                     <segment title="todos"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="hld-N6-gPZ" eventType="valueChanged" id="KYl-bN-LiC"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pUB-e8-dTN"/>
@@ -552,19 +555,19 @@
     </scenes>
     <designables>
         <designable name="2M8-hu-cv0">
-            <size key="intrinsicContentSize" width="96.5" height="34"/>
+            <size key="intrinsicContentSize" width="61.5" height="34"/>
         </designable>
         <designable name="5Pl-vI-ELH">
-            <size key="intrinsicContentSize" width="96.5" height="34"/>
+            <size key="intrinsicContentSize" width="61.5" height="34"/>
         </designable>
         <designable name="Lfm-6D-Jdg">
-            <size key="intrinsicContentSize" width="170.5" height="34"/>
+            <size key="intrinsicContentSize" width="135.5" height="34"/>
         </designable>
         <designable name="NLb-Ig-LIY">
             <size key="intrinsicContentSize" width="320" height="216"/>
         </designable>
         <designable name="ZCJ-So-Eql">
-            <size key="intrinsicContentSize" width="203" height="34"/>
+            <size key="intrinsicContentSize" width="168" height="34"/>
         </designable>
         <designable name="v9i-AM-XBX">
             <size key="intrinsicContentSize" width="320" height="216"/>
