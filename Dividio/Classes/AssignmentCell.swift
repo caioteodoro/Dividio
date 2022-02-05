@@ -25,7 +25,6 @@ class AssignmentCell: UITableViewCell {
         } else {
             self.accessoryType = .none
         }
-    
     }
 
 }

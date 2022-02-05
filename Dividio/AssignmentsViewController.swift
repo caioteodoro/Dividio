@@ -18,6 +18,10 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     //counter to proceed
     //fill array with 0s
     
+    //cada vez que rolar o pickerView: salva seleções para o item, quando voltar para o item recarrega as seleções
+    //if array = 0, cell.isSelected = false
+    //if cell.isSelected, array = 1
+    
     
     @IBOutlet weak var itemPicker: CustomPickerView!
     @IBOutlet weak var peopleTableView: TableLayout!
@@ -27,7 +31,7 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBAction func segmentedControlChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            break
+            peopleTableView.deselectRow(at: IndexPath(row: 0, section: 0), animated: true)
         case 1:
             for i in 0...(people.count-1) {
                 let indexPath = IndexPath(row: i, section: 0)
@@ -40,14 +44,12 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
     }
     
-    
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selected = row
     }
     
     func warningContinueButton () {
-        //show message if an item has not been assigned
+        //show message if an item has not been assigned to a person
     }
     
     override func viewDidLoad() {
@@ -58,6 +60,7 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         segmentedControlSettings();
         
         peopleTableView.dataSource = self;
+        peopleTableView.delegate = self;
         peopleTableView.tableFooterView = UIView(frame: .zero);
         peopleTableView.allowsMultipleSelection = true;
         warningContinueButton ()
@@ -115,13 +118,16 @@ extension AssignmentsViewController: UITableViewDataSource, UITableViewDelegate 
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        segmentedControl.selectedSegmentIndex = 0
+    }
     
+    func doSomething () {
+        self.segmentedControl.selectedSegmentIndex = 0;
+        self.continueButton.backgroundColor = UIColor.red
+    }
     
-//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        peopleTableView.deselectRow(at: indexPath, animated: true)
-//        segmentedControl.selectedSegmentIndex = 0;
-//        continueButton.backgroundColor = UIColor.red
-//    }
+
     
     
 }
