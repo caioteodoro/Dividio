@@ -79,10 +79,6 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return modeView
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-      return 100
-    }
-    
     func paymentsPickerViewSettings () {
         personPicker.transform = CGAffineTransform(rotationAngle: -90  * (.pi/180));
         personPicker.frame = CGRect(x: 0, y: 0, width: view.frame.width - 94, height: 45)

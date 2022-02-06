@@ -14,26 +14,9 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var people: [Person] = [];
     var items: [Item] = [];
     var listOfPayments: [Double] = [];
-    var selected = 0;
-    var counter: [Bool] = [];
-    //fill array with 0s
-    
-    func populateCounter () {
-        for i in 0...(items.count-1) {
-            counter.insert(true, at: i)
-        }
-        allowContinueButton()
-    }
-    
-    func allowContinueButton () {
-        if counter.allSatisfy({ $0 == true }) { continueButton.isEnabled = false;
-        } else { continueButton.isEnabled = true; }
-    }
-    
-    
-    //cada vez que rolar o pickerView: salva seleções para o item, quando voltar para o item recarrega as seleções
-    //if array = 0, cell.isSelected = false
-    //if cell.isSelected, array = 1
+    var pickerViewCounter: [Bool] = [];
+    var selectedPeoplePriorChanging: [Bool] = [];
+    var selectedItem = 0;
     
     
     @IBOutlet weak var itemPicker: CustomPickerView!
@@ -42,53 +25,55 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBAction func segmentedControlChanged(_ sender: Any) {
+        
         switch segmentedControl.selectedSegmentIndex {
+            
         case 0:
-            peopleTableView.deselectRow(at: IndexPath(row: 0, section: 0), animated: true)
+            for i in 0...(people.count-1) {
+                people[i].consumedItems[selectedItem] = selectedPeoplePriorChanging[i]
+            }
+            selectionOfRows()
+            
         case 1:
             for i in 0...(people.count-1) {
-                let indexPath = IndexPath(row: i, section: 0)
-                peopleTableView.selectRow(at: indexPath, animated: true, scrollPosition: .top)
+                selectedPeoplePriorChanging.insert(people[i].consumedItems[selectedItem], at: i)
+                people[i].consumedItems[selectedItem] = true
             }
+            selectionOfRows()
             
         default:
             break
         }
-        
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selected = row
-        //counter[(row-1)] = true
-        //ACTION HERE
-        print(counter.count)
+    
+    //Custom Functions
+    func segmentedControlSettings(){
+        segmentedControl.setTitleTextAttributes([.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)] , for: .normal)
+        segmentedControl.setTitleTextAttributes([.foregroundColor: #colorLiteral(red: 0.2705882353, green: 0.2705882353, blue: 0.2705882353, alpha: 1)] , for: .selected)
+    }
+    
+    func populateCounter () {
+        for i in 0...(items.count-1) {
+            pickerViewCounter.insert(false, at: i)
+            for n in 0...(people.count-1) {
+                people[n].consumedItems.insert(false, at: i)
+            }
+            people[0].consumedItems[i] = true
+        }
+        pickerViewCounter[0] = true
+        allowContinueButton()
+    }
+    
+    func allowContinueButton () {
+        if pickerViewCounter.allSatisfy({ $0 == true }) { continueButton.isEnabled = true;
+        } else { continueButton.isEnabled = false; }
     }
     
     func warningContinueButton () {
         //show message if an item has not been assigned to a person
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        populateCounter()
-        
-        self.itemPicker.delegate = self;
-        self.itemPicker.dataSource = self;
-        paymentsPickerViewSettings();
-        segmentedControlSettings();
-        
-        peopleTableView.dataSource = self;
-        peopleTableView.delegate = self;
-        peopleTableView.tableFooterView = UIView(frame: .zero);
-        peopleTableView.allowsMultipleSelection = true;
-        warningContinueButton ()
-        
-    }
-    
-    func segmentedControlSettings(){
-        segmentedControl.setTitleTextAttributes([.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)] , for: .normal)
-        segmentedControl.setTitleTextAttributes([.foregroundColor: #colorLiteral(red: 0.2705882353, green: 0.2705882353, blue: 0.2705882353, alpha: 1)] , for: .selected)
-    }
+
     
     //PickerView Functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -111,15 +96,34 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         return modeView
     }
     
-    
-    //do I need this func? it's in paymentsvc as well
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-      return 100
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedItem = row
+        pickerViewCounter[row] = true
+        selectionOfRows()
+        allowContinueButton()
     }
     
     func paymentsPickerViewSettings () {
         itemPicker.transform = CGAffineTransform(rotationAngle: -90  * (.pi/180));
         itemPicker.frame = CGRect(x: 0, y: 0, width: view.frame.width - 94, height: 45)
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.itemPicker.delegate = self;
+        self.itemPicker.dataSource = self;
+        self.peopleTableView.dataSource = self;
+        self.peopleTableView.delegate = self;
+        self.peopleTableView.tableFooterView = UIView(frame: .zero);
+        self.peopleTableView.allowsMultipleSelection = true;
+        
+        paymentsPickerViewSettings();
+        segmentedControlSettings();
+        populateCounter();
+        warningContinueButton();
+        selectionOfRows()
     }
 }
 
@@ -133,21 +137,26 @@ extension AssignmentsViewController: UITableViewDataSource, UITableViewDelegate 
         
         let cell = peopleTableView.dequeueReusableCell(withIdentifier: "assignmentCell", for: indexPath) as! AssignmentCell
         cell.nameLabel.text = people[indexPath.row].name;
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         segmentedControl.selectedSegmentIndex = 0
+        people[indexPath.row].consumedItems[selectedItem] = false
     }
     
-    func doSomething () {
-        self.segmentedControl.selectedSegmentIndex = 0;
-        self.continueButton.backgroundColor = UIColor.red
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        people[indexPath.row].consumedItems[selectedItem] = true
     }
     
-
-    
-    
+    func selectionOfRows () {
+        for i in 0...(people.count-1){
+            if people[i].consumedItems[selectedItem] == true {
+                peopleTableView.selectRow(at: IndexPath(row: i, section: 0), animated: true, scrollPosition: .top)
+            } else {
+                peopleTableView.deselectRow(at: IndexPath(row: i, section: 0), animated: true)
+            }
+        }
+    }
 }
 
