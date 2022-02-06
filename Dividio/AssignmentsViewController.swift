@@ -15,8 +15,21 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var items: [Item] = [];
     var listOfPayments: [Double] = [];
     var selected = 0;
-    //counter to proceed
+    var counter: [Bool] = [];
     //fill array with 0s
+    
+    func populateCounter () {
+        for i in 0...(items.count-1) {
+            counter.insert(true, at: i)
+        }
+        allowContinueButton()
+    }
+    
+    func allowContinueButton () {
+        if counter.allSatisfy({ $0 == true }) { continueButton.isEnabled = false;
+        } else { continueButton.isEnabled = true; }
+    }
+    
     
     //cada vez que rolar o pickerView: salva seleções para o item, quando voltar para o item recarrega as seleções
     //if array = 0, cell.isSelected = false
@@ -46,6 +59,9 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selected = row
+        //counter[(row-1)] = true
+        //ACTION HERE
+        print(counter.count)
     }
     
     func warningContinueButton () {
@@ -54,6 +70,8 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        populateCounter()
+        
         self.itemPicker.delegate = self;
         self.itemPicker.dataSource = self;
         paymentsPickerViewSettings();
@@ -92,6 +110,7 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         modeView.transform = CGAffineTransform(rotationAngle: 90 * (.pi/180))
         return modeView
     }
+    
     
     //do I need this func? it's in paymentsvc as well
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
