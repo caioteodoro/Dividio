@@ -14,6 +14,7 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var people: [Person] = [];
     var items: [Item] = [];
     var listOfPayments: [Double] = [];
+    var totalCost: Double = 0;
     var selected = 0;
     
     
@@ -21,7 +22,7 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var personPicker: CustomPickerView!
     @IBOutlet weak var paymentsTableView: TableLayout!
     @IBOutlet weak var continueButton: PurpleButton!
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var missingPaymentsLabel: UILabel!
     
     @IBAction func addPaymentButton(_ sender: Any) {
         let newPayment = Double(paymentTextField.text!)
@@ -34,6 +35,12 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             //nameTextField.text = ""; tem como mover o seletor de nomes automaticamente?
             //personPicker.selectRow(0, inComponent: 1, animated: true)
             paymentTextField.text = "";
+            totalCost -= newPayment!;
+            if totalCost != 0 {
+                missingPaymentsLabel.text = "ainda faltam: R$ " + String(totalCost)
+            } else {
+                missingPaymentsLabel.text =  "total atingido :)"
+            }
             allowContinueButton ()
         }
     }
@@ -43,12 +50,13 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func allowContinueButton () {
-        if listOfPayments == [] { continueButton.isEnabled = false;
+        if totalCost != 0 { continueButton.isEnabled = false;
         } else { continueButton.isEnabled = true; }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.missingPaymentsLabel.text = "ainda faltam: R$ " + String(totalCost);
         self.personPicker.delegate = self;
         self.personPicker.dataSource = self;
         paymentsPickerViewSettings();

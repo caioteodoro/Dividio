@@ -15,9 +15,11 @@ class ItemsViewController: UIViewController {
     @IBOutlet weak var itemsTableView: UITableView!
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var totalCostLabel: UILabel!
     
-    var people: [Person] = []
-    var items: [Item] = []
+    var people: [Person] = [];
+    var items: [Item] = [];
+    var totalCost: Double = 0;
     
     @IBAction func addItem(_ sender: Any) {
         let newItemName = nameTextField.text
@@ -29,7 +31,9 @@ class ItemsViewController: UIViewController {
             itemsTableView.endUpdates();
             nameTextField.text = "";
             priceTextField.text = "";
-            allowContinueButton ()
+            totalCost += Double(newItemPrice!)!;
+            totalCostLabel.text = "valor total: R$ " +  String(totalCost);
+            allowContinueButton ();
         }
     }
         
@@ -50,6 +54,7 @@ class ItemsViewController: UIViewController {
             let destinationViewController: PaymentsViewController = segue.destination as! PaymentsViewController
             destinationViewController.items = self.items;
             destinationViewController.people = self.people;
+            destinationViewController.totalCost = self.totalCost;
         }
     }
         
@@ -70,6 +75,8 @@ extension ItemsViewController: UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            totalCost -= items[indexPath.row].price
+            totalCostLabel.text = "valor total: R$ " + String(totalCost);
             items.remove(at: indexPath.row)
             itemsTableView.deleteRows(at: [indexPath], with: .fade)
         }

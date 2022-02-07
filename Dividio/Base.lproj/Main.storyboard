@@ -162,7 +162,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B5p-m6-8Oy" customClass="TableLayout" customModule="Dividio" customModuleProvider="target">
-                                <rect key="frame" x="45" y="329.5" width="324" height="333.5"/>
+                                <rect key="frame" x="45" y="329.5" width="324" height="350.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="itemCell" id="TAd-hh-3nO" customClass="ItemCell" customModule="Dividio" customModuleProvider="target">
@@ -231,18 +231,26 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="valor total: R$ --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsv-ho-eSH">
+                                <rect key="frame" x="45" y="695" width="324" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bmw-s5-GdH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Lfm-6D-Jdg" firstAttribute="top" secondItem="xHs-Xm-B1q" secondAttribute="bottom" id="5wo-Lt-CNW"/>
+                            <constraint firstItem="Bbl-Mt-ARv" firstAttribute="top" secondItem="Jsv-ho-eSH" secondAttribute="bottom" constant="15" id="DG9-iq-zij"/>
                             <constraint firstItem="Lfm-6D-Jdg" firstAttribute="leading" secondItem="5Pl-vI-ELH" secondAttribute="leading" id="FC1-Ua-2pH"/>
                             <constraint firstItem="Lfm-6D-Jdg" firstAttribute="leading" secondItem="xHs-Xm-B1q" secondAttribute="leading" id="GCY-pg-lxD"/>
-                            <constraint firstItem="Bbl-Mt-ARv" firstAttribute="top" secondItem="B5p-m6-8Oy" secondAttribute="bottom" constant="75" id="JSE-TP-4ov"/>
                             <constraint firstItem="B5p-m6-8Oy" firstAttribute="trailing" secondItem="Bbl-Mt-ARv" secondAttribute="trailing" id="Jez-5H-pCQ"/>
                             <constraint firstItem="5Pl-vI-ELH" firstAttribute="trailing" secondItem="qEY-ZW-8be" secondAttribute="trailing" id="KwY-C2-a3S"/>
                             <constraint firstItem="xHs-Xm-B1q" firstAttribute="top" secondItem="Bmw-s5-GdH" secondAttribute="top" constant="30" id="N2P-x9-E7Y"/>
                             <constraint firstItem="qEY-ZW-8be" firstAttribute="trailing" secondItem="B5p-m6-8Oy" secondAttribute="trailing" id="S96-q4-jCH"/>
+                            <constraint firstItem="Jsv-ho-eSH" firstAttribute="top" secondItem="B5p-m6-8Oy" secondAttribute="bottom" constant="15" id="Uqk-Qp-O4X"/>
+                            <constraint firstItem="Jsv-ho-eSH" firstAttribute="leading" secondItem="Bmw-s5-GdH" secondAttribute="leading" constant="45" id="WbQ-36-2So"/>
                             <constraint firstItem="qEY-ZW-8be" firstAttribute="leading" secondItem="Bmw-s5-GdH" secondAttribute="leading" constant="45" id="Xjy-oQ-Qfd"/>
                             <constraint firstItem="qEY-ZW-8be" firstAttribute="top" secondItem="5Pl-vI-ELH" secondAttribute="bottom" constant="19" id="ZIL-6P-DDk"/>
                             <constraint firstItem="5Pl-vI-ELH" firstAttribute="top" secondItem="Lfm-6D-Jdg" secondAttribute="bottom" constant="19" id="ZTf-8z-Bqv"/>
@@ -253,6 +261,7 @@
                             <constraint firstItem="Lfm-6D-Jdg" firstAttribute="trailing" secondItem="xHs-Xm-B1q" secondAttribute="trailing" id="qKa-5r-Nz2"/>
                             <constraint firstItem="B5p-m6-8Oy" firstAttribute="leading" secondItem="Bbl-Mt-ARv" secondAttribute="leading" id="sYf-A7-iWz"/>
                             <constraint firstItem="Lfm-6D-Jdg" firstAttribute="trailing" secondItem="5Pl-vI-ELH" secondAttribute="trailing" id="vVj-iM-FtY"/>
+                            <constraint firstItem="Bmw-s5-GdH" firstAttribute="trailing" secondItem="Jsv-ho-eSH" secondAttribute="trailing" constant="45" id="wWR-Ox-yf7"/>
                             <constraint firstItem="B5p-m6-8Oy" firstAttribute="top" secondItem="qEY-ZW-8be" secondAttribute="bottom" constant="15" id="wZr-ce-4ab"/>
                         </constraints>
                     </view>
@@ -265,6 +274,7 @@
                         <outlet property="itemsTableView" destination="B5p-m6-8Oy" id="K3D-CZ-GkR"/>
                         <outlet property="nameTextField" destination="Lfm-6D-Jdg" id="MYE-mc-bEb"/>
                         <outlet property="priceTextField" destination="5Pl-vI-ELH" id="VNY-LG-aGC"/>
+                        <outlet property="totalCostLabel" destination="Jsv-ho-eSH" id="ps1-HH-AhM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goS-20-KMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -297,7 +307,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f8f-7Y-dkR" customClass="TableLayout" customModule="Dividio" customModuleProvider="target">
-                                <rect key="frame" x="45" y="325.5" width="324" height="337.5"/>
+                                <rect key="frame" x="45" y="325.5" width="324" height="354.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="paymentCell" id="fU1-op-DNm" customClass="ItemCell" customModule="Dividio" customModuleProvider="target">
@@ -386,6 +396,12 @@
                                     <constraint firstAttribute="height" constant="45" id="i8x-kJ-emD"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ainda faltam: R$ --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7U-71-nXX">
+                                <rect key="frame" x="45" y="695" width="324" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8KU-XK-RTF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -393,11 +409,14 @@
                             <constraint firstItem="jCb-pq-8UW" firstAttribute="top" secondItem="EMf-v2-M0a" secondAttribute="bottom" id="2V3-7l-Lml"/>
                             <constraint firstItem="EMf-v2-M0a" firstAttribute="leading" secondItem="8KU-XK-RTF" secondAttribute="leading" constant="49" id="Aqm-4y-d5g"/>
                             <constraint firstItem="8KU-XK-RTF" firstAttribute="trailing" secondItem="f8f-7Y-dkR" secondAttribute="trailing" constant="45" id="BYx-Ja-LHW"/>
-                            <constraint firstItem="oPl-Ud-Dj8" firstAttribute="top" secondItem="f8f-7Y-dkR" secondAttribute="bottom" constant="75" id="DWa-sr-HxL"/>
+                            <constraint firstItem="8KU-XK-RTF" firstAttribute="trailing" secondItem="b7U-71-nXX" secondAttribute="trailing" constant="45" id="IQU-WS-jMe"/>
                             <constraint firstItem="EMf-v2-M0a" firstAttribute="top" secondItem="8KU-XK-RTF" secondAttribute="top" constant="30" id="KWn-Xu-n31"/>
+                            <constraint firstItem="oPl-Ud-Dj8" firstAttribute="top" secondItem="b7U-71-nXX" secondAttribute="bottom" constant="15" id="Nhp-lz-b4V"/>
+                            <constraint firstItem="b7U-71-nXX" firstAttribute="leading" secondItem="8KU-XK-RTF" secondAttribute="leading" constant="45" id="Rl9-ib-PTF"/>
                             <constraint firstItem="8KU-XK-RTF" firstAttribute="trailing" secondItem="oPl-Ud-Dj8" secondAttribute="trailing" constant="45" id="aFg-2f-Gmc"/>
                             <constraint firstItem="8KU-XK-RTF" firstAttribute="bottom" secondItem="oPl-Ud-Dj8" secondAttribute="bottom" constant="30" id="ePo-9L-3Kd"/>
                             <constraint firstItem="8KU-XK-RTF" firstAttribute="trailing" secondItem="EMf-v2-M0a" secondAttribute="trailing" constant="45" id="fXO-ls-TKw"/>
+                            <constraint firstItem="b7U-71-nXX" firstAttribute="top" secondItem="f8f-7Y-dkR" secondAttribute="bottom" constant="15" id="ge5-UT-f5I"/>
                             <constraint firstItem="8KU-XK-RTF" firstAttribute="trailing" secondItem="mV7-Rt-5Ti" secondAttribute="trailing" constant="45" id="goe-3Q-wwN"/>
                             <constraint firstItem="2M8-hu-cv0" firstAttribute="top" secondItem="jCb-pq-8UW" secondAttribute="bottom" constant="15" id="kE1-eg-Zw5"/>
                             <constraint firstItem="jCb-pq-8UW" firstAttribute="leading" secondItem="8KU-XK-RTF" secondAttribute="leading" constant="49" id="lWN-UN-fiv"/>
@@ -415,10 +434,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="continueButton" destination="oPl-Ud-Dj8" id="ihS-bF-d6x"/>
+                        <outlet property="missingPaymentsLabel" destination="b7U-71-nXX" id="9hR-JI-7FA"/>
                         <outlet property="paymentTextField" destination="2M8-hu-cv0" id="LgD-D1-hd1"/>
                         <outlet property="paymentsTableView" destination="f8f-7Y-dkR" id="9ep-f1-PJo"/>
                         <outlet property="personPicker" destination="NLb-Ig-LIY" id="Lm8-EK-Qcl"/>
-                        <outlet property="testLabel" destination="EMf-v2-M0a" id="XZi-L8-o9V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YBJ-9C-uT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
