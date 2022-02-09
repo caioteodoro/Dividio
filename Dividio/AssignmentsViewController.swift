@@ -129,6 +129,15 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         warningContinueButton();
         selectionOfRows()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "assignmentsToResultsSegue" {
+            let destinationViewController: ResultsViewController = segue.destination as! ResultsViewController
+            destinationViewController.items = self.items;
+            destinationViewController.people = self.people;
+        }
+    }
+    
 }
 
 

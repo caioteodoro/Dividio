@@ -508,7 +508,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="continuar"/>
                                 <connections>
-                                    <segue destination="YJm-Sl-Oo0" kind="presentation" modalPresentationStyle="fullScreen" id="MTw-ql-2YY"/>
+                                    <segue destination="YJm-Sl-Oo0" kind="presentation" identifier="assignmentsToResultsSegue" modalPresentationStyle="fullScreen" id="MTw-ql-2YY"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Qs-vu-u0p">
@@ -581,11 +581,57 @@
                     <view key="view" contentMode="scaleToFill" id="KCu-iw-UdK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="estes são seus resultados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4J-g6-KD9">
+                                <rect key="frame" x="94.5" y="148" width="225" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltf-27-Wbf">
+                                <rect key="frame" x="0.0" y="284" width="414" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHk-07-xr1">
+                                <rect key="frame" x="49" y="580" width="320" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="JEb-3y-Yss"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="salvar tudo">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o que gostaria de fazer com eles?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0F-iB-ZgF">
+                                <rect key="frame" x="56.5" y="176" width="301" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2v7-vO-FY3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.47058823529999999" green="0.35294117650000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fHk-07-xr1" firstAttribute="leading" secondItem="2v7-vO-FY3" secondAttribute="leading" constant="49" id="0wh-SK-0aj"/>
+                            <constraint firstItem="ltf-27-Wbf" firstAttribute="trailing" secondItem="2v7-vO-FY3" secondAttribute="trailing" id="9Ph-FQ-Wl4"/>
+                            <constraint firstItem="L0F-iB-ZgF" firstAttribute="centerX" secondItem="KCu-iw-UdK" secondAttribute="centerX" id="CYU-xA-ANV"/>
+                            <constraint firstItem="fHk-07-xr1" firstAttribute="top" secondItem="ltf-27-Wbf" secondAttribute="bottom" constant="80" id="Qbx-l6-kg7"/>
+                            <constraint firstItem="L0F-iB-ZgF" firstAttribute="top" secondItem="U4J-g6-KD9" secondAttribute="bottom" id="eAu-Jk-DSt"/>
+                            <constraint firstItem="ltf-27-Wbf" firstAttribute="leading" secondItem="2v7-vO-FY3" secondAttribute="leading" id="hzh-kL-Us3"/>
+                            <constraint firstItem="U4J-g6-KD9" firstAttribute="centerX" secondItem="KCu-iw-UdK" secondAttribute="centerX" id="iQJ-SW-DEk"/>
+                            <constraint firstItem="ltf-27-Wbf" firstAttribute="top" secondItem="L0F-iB-ZgF" secondAttribute="bottom" constant="80" id="n4p-yl-yCG"/>
+                            <constraint firstItem="2v7-vO-FY3" firstAttribute="trailing" secondItem="fHk-07-xr1" secondAttribute="trailing" constant="45" id="x6v-PI-NCI"/>
+                            <constraint firstItem="U4J-g6-KD9" firstAttribute="top" secondItem="2v7-vO-FY3" secondAttribute="top" constant="60" id="xmd-6Q-eaE"/>
+                        </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="resultsPickerView" destination="ltf-27-Wbf" id="VIX-2w-m0w"/>
+                        <outlet property="saveButton" destination="fHk-07-xr1" id="8kj-Dt-beS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbt-Jq-lIQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,6 +659,9 @@
         </designable>
     </designables>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
