@@ -96,6 +96,10 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         return modeView
     }
     
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 100
+    }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedItem = row
         pickerViewCounter[row] = true
