@@ -56,7 +56,6 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="continuar"/>
                                 <connections>
-                                    <action selector="sendDataThroughContinueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ajt-w3-Nnq"/>
                                     <segue destination="0du-Vp-LKi" kind="presentation" identifier="namesToItemsSegue" modalPresentationStyle="fullScreen" id="pNZ-r8-slk"/>
                                 </connections>
                             </button>
@@ -229,7 +228,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="QiD-Tj-Fe7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="valor total: R$ --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsv-ho-eSH">
                                 <rect key="frame" x="45" y="695" width="324" height="28"/>
@@ -304,7 +303,7 @@
                                     <constraint firstAttribute="height" constant="45" id="nKW-sV-ydX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f8f-7Y-dkR" customClass="TableLayout" customModule="Dividio" customModuleProvider="target">
                                 <rect key="frame" x="45" y="325.5" width="324" height="354.5"/>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NamesViewController: UIViewController {
+class NamesViewController: UIViewController, UITextFieldDelegate {
     
     var names: [Person] = []
     
@@ -28,10 +28,10 @@ class NamesViewController: UIViewController {
         }
     }
     
-    @IBAction func sendDataThroughContinueButton(_ sender: Any) {
-        
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        addPerson((Any).self)
+        return true
     }
-    
     
     func allowContinueButton () {
         if names.isEmpty == true { continueButton.isEnabled = false;
@@ -40,6 +40,7 @@ class NamesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.textField.delegate = self;
         namesTableView.dataSource = self;
         namesTableView.tableFooterView = UIView(frame: .zero);
         allowContinueButton ()

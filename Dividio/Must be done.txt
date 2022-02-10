@@ -9,7 +9,6 @@ Add item when click return on keyboard
 
 Third vc
 Fade labels too
-Return button
 ---add multiple payments per person
 --do not allow payments to exceed items cost
 
@@ -17,11 +16,6 @@ Fourth vc
 Check segment control status before changing items to match what was settled.
 Disable continue button if an item was not assigned to anyone (you can edit what was made and only give TRUE to an item if it has at least one person selected)
 
-Fifth vc:
-Present results as picker view
-
-Last:
-Center and fix pickerview
 
 Numbers txt fields
 Add mask 

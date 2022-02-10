@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemsViewController: UIViewController {
+class ItemsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
@@ -36,12 +36,18 @@ class ItemsViewController: UIViewController {
             allowContinueButton ();
         }
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        addItem(Any.self)
+        return true
+    }
         
     override func viewDidLoad() {
-        super.viewDidLoad()
-        itemsTableView.dataSource = self;
-        itemsTableView.tableFooterView = UIView(frame: .zero);
-        allowContinueButton ()
+        super.viewDidLoad();
+        self.itemsTableView.dataSource = self;
+        self.nameTextField.delegate = self;
+        self.itemsTableView.tableFooterView = UIView(frame: .zero);
+        self.allowContinueButton();
         }
         
     func allowContinueButton () {
