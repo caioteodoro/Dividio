@@ -46,19 +46,26 @@ class ResultsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let around = UIView();
+        
         let modeView = UIView()
-        modeView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        modeView.frame = CGRect(x: 0, y: 0, width: 180, height: 180)
+        modeView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
+        modeView.layer.borderColor = #colorLiteral(red: 0.2705882353, green: 0.2705882353, blue: 0.2705882353, alpha: 1);
+        modeView.layer.borderWidth = 3;
         let modeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         modeLabel.textColor = .black
         modeLabel.text = people[row].name
         modeLabel.textAlignment = .center
         modeView.addSubview(modeLabel)
         modeView.transform = CGAffineTransform(rotationAngle: 90 * (.pi/180))
-        return modeView
+        
+        around.addSubview(modeView)
+        return around
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 100
+        return 190
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -67,7 +74,7 @@ class ResultsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func resultsPickerViewSettings () {
         self.resultsPickerView.transform = CGAffineTransform(rotationAngle: -90  * (.pi/180));
-        self.resultsPickerView.frame = CGRect(x: 0, y: 0, width: view.frame.width - 94, height: 45)
+        self.resultsPickerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 190)
     }
     
 
