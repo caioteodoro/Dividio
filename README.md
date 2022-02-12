@@ -1,4 +1,4 @@
-# Dividio
+# 📲 Dividio ➗
 
 ### Dividio is the first project I try to do from draft to its final state by myself. 
 
