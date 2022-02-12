@@ -24,22 +24,23 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBAction func addPaymentButton(_ sender: Any) {
         let newPayment = Double(paymentTextField.text!)
-        if newPayment != nil {
-            people[selected].payment = newPayment!
+        people[selected].payment = newPayment!
+        if newPayment != nil && (totalCost - newPayment!) >= 0 {
             listOfPayments.insert(newPayment!, at: 0);
             paymentsTableView.beginUpdates();
             paymentsTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right);
             paymentsTableView.endUpdates();
-            //nameTextField.text = ""; tem como mover o seletor de nomes automaticamente?
-            //personPicker.selectRow(0, inComponent: 1, animated: true)
             paymentTextField.text = "";
             totalCost -= newPayment!;
-            if totalCost != 0 {
+            if (totalCost - newPayment!) != 0{
                 missingPaymentsLabel.text = "ainda faltam: R$ " + String(totalCost)
             } else {
                 missingPaymentsLabel.text =  "total atingido :)"
             }
             allowContinueButton ()
+        } else {
+            print("Não pode!!!")
+            #warning("set alert for user")
         }
     }
     
@@ -130,8 +131,10 @@ extension PaymentsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             listOfPayments.remove(at: indexPath.row)
+            totalCost += people[indexPath.row].payment;
             people[indexPath.row].payment = 0;
             paymentsTableView.deleteRows(at: [indexPath], with: .fade)
+            missingPaymentsLabel.text = "ainda faltam: R$ " + String(totalCost)
         }
         allowContinueButton ()
     }

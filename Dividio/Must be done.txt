@@ -1,16 +1,17 @@
-First vc
-Dismiss keyboard when click outside txtfield
-Add person when click return on keyboard
+Multiple vc:
+Add warning if fields are missing
 
 Second vc:
 Label fade in when add item and fade out when delete all items
 Fade label when update price
-Add item when click return on keyboard
 
 Third vc
 Fade labels too
 ---add multiple payments per person
 --do not allow payments to exceed items cost
+
+
+Delete payment: update total cost and label
 
 Fourth vc
 Check segment control status before changing items to match what was settled.

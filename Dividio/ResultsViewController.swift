@@ -10,11 +10,11 @@ import UIKit
 
 class ResultsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var resultsPickerView: UIPickerView!
-    
     var people: [Person] = [];
     var items: [Item] = [];
+    
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var resultsPickerView: UIPickerView!
 
     //Custom Functions
     func designSaveButton() {

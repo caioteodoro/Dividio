@@ -12,7 +12,6 @@ class NamesViewController: UIViewController, UITextFieldDelegate {
     
     var names: [Person] = []
     
-    
     @IBOutlet weak var namesTableView: UITableView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var addPersonButton: UIButton!

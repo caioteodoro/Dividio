@@ -10,16 +10,16 @@ import UIKit
 
 class ItemsViewController: UIViewController, UITextFieldDelegate {
 
+    var people: [Person] = [];
+    var items: [Item] = [];
+    var totalCost: Double = 0;
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var itemsTableView: UITableView!
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var totalCostLabel: UILabel!
-    
-    var people: [Person] = [];
-    var items: [Item] = [];
-    var totalCost: Double = 0;
     
     @IBAction func addItem(_ sender: Any) {
         let newItemName = nameTextField.text
