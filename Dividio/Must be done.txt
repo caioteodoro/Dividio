@@ -8,10 +8,8 @@ Fade label when update price
 Third vc
 Fade labels too
 ---add multiple payments per person
---do not allow payments to exceed items cost
-
-
-Delete payment: update total cost and label
+Hide / show payments per person
+Include buttons to hide all and expand all
 
 Fourth vc
 Check segment control status before changing items to match what was settled.
@@ -22,4 +20,5 @@ Numbers txt fields
 Add mask 
 Recognize comma as dot
 
+Create second cell when there are 2 values
 

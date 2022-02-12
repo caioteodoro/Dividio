@@ -2,11 +2,11 @@ import Foundation
 
 class Person {
     var name: String;
-    var payment: Double;
+    var payments: [Double];
     var consumedItems: [Bool]
-    init(name: String, payment: Double, consumedItems: [Bool]) {
+    init(name: String, payments: [Double], consumedItems: [Bool]) {
         self.name = name;
-        self.payment = payment;
+        self.payments = payments;
         self.consumedItems = consumedItems;
     }
 }
