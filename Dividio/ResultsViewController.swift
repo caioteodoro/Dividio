@@ -16,19 +16,7 @@ class ResultsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     var people: [Person] = [];
     var items: [Item] = [];
 
-    
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        designSaveButton()
-        resultsPickerViewSettings()
-        
-        self.resultsPickerView.delegate = self;
-        self.resultsPickerView.dataSource = self;
-    }
-    
+    //Custom Functions
     func designSaveButton() {
         self.saveButton.layer.shadowColor = #colorLiteral(red: 0.2509489954, green: 0.2509984672, blue: 0.2509458363, alpha: 1)
         self.saveButton.layer.shadowOffset = CGSize(width: -4, height: 4);
@@ -36,13 +24,26 @@ class ResultsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         self.saveButton.layer.shadowOpacity = 1;
     }
     
-    
+    //PickerView Functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return people.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 190
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //#TODO: will I need this one?
+    }
+    
+    func resultsPickerViewSettings () {
+        self.resultsPickerView.transform = CGAffineTransform(rotationAngle: -90  * (.pi/180));
+        self.resultsPickerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 190)
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -64,18 +65,13 @@ class ResultsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return around
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 190
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    //Essential Functions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        designSaveButton()
+        resultsPickerViewSettings()
         
+        self.resultsPickerView.delegate = self;
+        self.resultsPickerView.dataSource = self;
     }
-    
-    func resultsPickerViewSettings () {
-        self.resultsPickerView.transform = CGAffineTransform(rotationAngle: -90  * (.pi/180));
-        self.resultsPickerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 190)
-    }
-    
-
 }

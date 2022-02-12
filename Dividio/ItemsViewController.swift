@@ -41,6 +41,16 @@ class ItemsViewController: UIViewController, UITextFieldDelegate {
         addItem(Any.self)
         return true
     }
+    
+    func allowContinueButton () {
+        if items.isEmpty == true { continueButton.isEnabled = false;
+        } else { continueButton.isEnabled = true; }
+    }
+    
+    func dismissKeyboard () {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap);
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -48,12 +58,8 @@ class ItemsViewController: UIViewController, UITextFieldDelegate {
         self.nameTextField.delegate = self;
         self.itemsTableView.tableFooterView = UIView(frame: .zero);
         self.allowContinueButton();
+        self.dismissKeyboard();
         }
-        
-    func allowContinueButton () {
-        if items.isEmpty == true { continueButton.isEnabled = false;
-        } else { continueButton.isEnabled = true; }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "itemsToPaymentsSegue" {

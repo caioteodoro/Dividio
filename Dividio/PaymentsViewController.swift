@@ -10,13 +10,11 @@ import UIKit
 
 class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
     var people: [Person] = [];
     var items: [Item] = [];
     var listOfPayments: [Double] = [];
     var totalCost: Double = 0;
     var selected = 0;
-    
     
     @IBOutlet weak var paymentTextField: WhiteTextField!
     @IBOutlet weak var personPicker: CustomPickerView!
@@ -45,34 +43,26 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
     
+    //PickerView Functions
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selected = row
     }
     
-    func allowContinueButton () {
-        if totalCost != 0 { continueButton.isEnabled = false;
-        } else { continueButton.isEnabled = true; }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.missingPaymentsLabel.text = "ainda faltam: R$ " + String(totalCost);
-        self.personPicker.delegate = self;
-        self.personPicker.dataSource = self;
-        paymentsPickerViewSettings();
-        
-        paymentsTableView.dataSource = self;
-        paymentsTableView.tableFooterView = UIView(frame: .zero);
-        allowContinueButton ()
-    }
-    
-    //PickerView Functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return people.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 100
+    }
+    
+    func paymentsPickerViewSettings () {
+        personPicker.transform = CGAffineTransform(rotationAngle: -90  * (.pi/180));
+        personPicker.frame = CGRect(x: 0, y: 0, width: view.frame.width - 94, height: 45)
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -87,13 +77,29 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return modeView
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 100
+    //Custom Functions
+    func allowContinueButton () {
+        if totalCost != 0 { continueButton.isEnabled = false;
+        } else { continueButton.isEnabled = true; }
     }
     
-    func paymentsPickerViewSettings () {
-        personPicker.transform = CGAffineTransform(rotationAngle: -90  * (.pi/180));
-        personPicker.frame = CGRect(x: 0, y: 0, width: view.frame.width - 94, height: 45)
+    func dismissKeyboard () {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap);
+    }
+    
+    //Essential Functions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.missingPaymentsLabel.text = "ainda faltam: R$ " + String(totalCost);
+        self.personPicker.delegate = self;
+        self.personPicker.dataSource = self;
+        self.paymentsPickerViewSettings();
+        
+        self.paymentsTableView.dataSource = self;
+        self.paymentsTableView.tableFooterView = UIView(frame: .zero);
+        self.allowContinueButton();
+        self.dismissKeyboard();
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

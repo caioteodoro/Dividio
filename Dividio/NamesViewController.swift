@@ -12,6 +12,7 @@ class NamesViewController: UIViewController, UITextFieldDelegate {
     
     var names: [Person] = []
     
+    
     @IBOutlet weak var namesTableView: UITableView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var addPersonButton: UIButton!
@@ -38,12 +39,18 @@ class NamesViewController: UIViewController, UITextFieldDelegate {
         } else { continueButton.isEnabled = true; }
     }
     
+    func dismissKeyboard () {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap);
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textField.delegate = self;
-        namesTableView.dataSource = self;
-        namesTableView.tableFooterView = UIView(frame: .zero);
-        allowContinueButton ()
+        self.namesTableView.dataSource = self;
+        self.namesTableView.tableFooterView = UIView(frame: .zero);
+        self.allowContinueButton ();
+        self.dismissKeyboard();
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

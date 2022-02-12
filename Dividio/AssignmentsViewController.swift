@@ -9,15 +9,14 @@
 import UIKit
 
 class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    
+        
     var people: [Person] = [];
     var items: [Item] = [];
     var listOfPayments: [Double] = [];
     var pickerViewCounter: [Bool] = [];
     var selectedPeoplePriorChanging: [Bool] = [];
+    var selectedSettingsPriorChanging: Int = 1;
     var selectedItem = 0;
-    
     
     @IBOutlet weak var itemPicker: CustomPickerView!
     @IBOutlet weak var peopleTableView: TableLayout!
@@ -45,7 +44,6 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
             break
         }
     }
-    
     
     //Custom Functions
     func segmentedControlSettings(){
@@ -84,18 +82,6 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         return items.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let modeView = UIView()
-        modeView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        let modeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        modeLabel.textColor = .black
-        modeLabel.text = items[row].name
-        modeLabel.textAlignment = .center
-        modeView.addSubview(modeLabel)
-        modeView.transform = CGAffineTransform(rotationAngle: 90 * (.pi/180))
-        return modeView
-    }
-    
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 100
     }
@@ -112,7 +98,19 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         itemPicker.frame = CGRect(x: 0, y: 0, width: view.frame.width - 94, height: 45)
     }
     
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let modeView = UIView()
+        modeView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        let modeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        modeLabel.textColor = .black
+        modeLabel.text = items[row].name
+        modeLabel.textAlignment = .center
+        modeView.addSubview(modeLabel)
+        modeView.transform = CGAffineTransform(rotationAngle: 90 * (.pi/180))
+        return modeView
+    }
     
+    //Essential Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -137,7 +135,6 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
             destinationViewController.people = self.people;
         }
     }
-    
 }
 
 
