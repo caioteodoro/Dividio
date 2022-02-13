@@ -16,6 +16,7 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var totalCost: Double = 0;
     var selected = 0;
     var position = 0;
+    var mainCellPosition = 0;
     
     @IBOutlet weak var paymentTextField: WhiteTextField!
     @IBOutlet weak var personPicker: CustomPickerView!
@@ -33,29 +34,61 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             
             paymentsTableView.beginUpdates();
             position = 0
-            for i in 0...selected{
-                position += people[i].payments.count;
+            for i in 0...selected {
+                if people[i].payments.count >= 2 {
+                    position += people[i].payments.count;
+                    position += 1;
+                } else if people[i].payments.count == 1  {
+                    position += 1;
+                }
             }
             position -= 1;
             
+            mainCellPosition = 0
+            if selected > 0 {
+                for i in 0...(selected-1){
+                    if people[i].payments.count >= 2 {
+                        mainCellPosition += 1;
+                    }
+                    mainCellPosition += people[i].payments.count;
+                }
+            }
+            print(mainCellPosition)
+            
+            //Insert MainCell or Subcell
             paymentsTableView.insertRows(at: [IndexPath(row: position, section: 0)], with: .right);
             
-            if let cell = paymentsTableView.cellForRow(at: IndexPath(row: position - people[selected].payments.count + 1, section: 0)) as? ItemCell {
+            //Refresh MainCell title
+            if let cell = paymentsTableView.cellForRow(at: IndexPath(row: mainCellPosition, section: 0)) as? ItemCell {
                 cell.itemPriceLabel.text = String(people[selected].payments.reduce(0, +));
+            }
+            
+            //Insert first payment in a SubCell
+            if people[selected].payments.count == 2 {
+                paymentsTableView.insertRows(at: [IndexPath(row: position - 1, section: 0)], with: .right);
             }
             paymentsTableView.endUpdates();
             
+            //Set first subcell to the right value
+            paymentsTableView.beginUpdates()
+            if people[selected].payments.count == 2 {
+                if let cell = paymentsTableView.cellForRow(at: IndexPath(row: position - 1, section: 0)) as? ItemCell {
+                    cell.itemPriceLabel.text = String(people[selected].payments[0]);
+                }
+            }
+            paymentsTableView.endUpdates()
             
             paymentTextField.text = "";
             totalCost -= newPayment!;
-            if (totalCost - newPayment!) != 0{
+            if (totalCost) != 0{
                 missingPaymentsLabel.text = "ainda faltam: R$ " + String(totalCost)
             } else {
                 missingPaymentsLabel.text =  "total atingido :)"
             }
             allowContinueButton ()
+            
         } else {
-            print("Não pode!!!")
+            print("Precisa inserir um pagamento e que seja menor ou igual ao valor do custo.")
             //set alert for user
         }
     }
@@ -131,7 +164,14 @@ class PaymentsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
 extension PaymentsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listOfPayments.count
+        var numberOfRows = 0
+        for i in 0...(people.count - 1) {
+            numberOfRows += people[i].payments.count
+            if people[i].payments.count > 1 {
+                numberOfRows += 1;
+            }
+        }
+        return numberOfRows
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -145,6 +185,7 @@ extension PaymentsViewController: UITableViewDataSource {
             cell.itemNameLabel.text = "";
             cell.itemPriceLabel.text = String( people[selected].payments[people[selected].payments.count - 1]);
             cell.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1);
+            cell.itemPriceLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1);
             return cell
         }
     }

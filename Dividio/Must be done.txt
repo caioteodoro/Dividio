@@ -9,7 +9,7 @@ Third vc
 Fade labels too
 ---add multiple payments per person
 Hide / show payments per person
-Include buttons to hide all and expand all
+Include buttons to hide all and expand all (might be an arrow up and down, no text)
 
 Fourth vc
 Check segment control status before changing items to match what was settled.
@@ -21,4 +21,41 @@ Add mask
 Recognize comma as dot
 
 Create second cell when there are 2 values
+
+Caio 2 pgtos
+Javi 3
+Charlie 1
+
+caio 3 ln
+Javi 4 ln
+Charlie 1 ln
+Total: 8 ln
+
+
+1 + 1
+1
+
+4 + 2
+5
+
+1 + 2
+1
+
+2 + 2 + 2
+3 + 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
