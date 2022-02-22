@@ -82,14 +82,11 @@
 		6B5668D12798B7B300A8C447 /* Dividio */ = {
 			isa = PBXGroup;
 			children = (
-				6B5668E92798BE8800A8C447 /* Classes */,
+				6B63A35327C545AB0071D217 /* Model */,
+				6B63A35427C545B40071D217 /* View */,
+				6B63A35527C545BD0071D217 /* Controller */,
 				6B5668D22798B7B300A8C447 /* AppDelegate.swift */,
 				6B5668D42798B7B300A8C447 /* SceneDelegate.swift */,
-				6B5668D62798B7B300A8C447 /* NamesViewController.swift */,
-				6B5E579E279A2287007DCE76 /* ItemsViewController.swift */,
-				6B5E57A8279D227A007DCE76 /* PaymentsViewController.swift */,
-				6B0B4C2027A73B4800E70171 /* AssignmentsViewController.swift */,
-				6BF8782E27AF4E4000BF3CBD /* ResultsViewController.swift */,
 				6B5668D82798B7B300A8C447 /* Main.storyboard */,
 				6B5668DE2798B7BD00A8C447 /* Assets.xcassets */,
 				6B5668E02798B7BD00A8C447 /* LaunchScreen.storyboard */,
@@ -99,19 +96,38 @@
 			path = Dividio;
 			sourceTree = "<group>";
 		};
-		6B5668E92798BE8800A8C447 /* Classes */ = {
+		6B63A35327C545AB0071D217 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B5668F02798DBD900A8C447 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B63A35427C545B40071D217 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				6B5668EA2798BED500A8C447 /* WhiteTextField.swift */,
 				6B5E57A2279A484D007DCE76 /* CurrencyTextField.swift */,
 				6B5668EE2798CD7800A8C447 /* TableLayout.swift */,
-				6B5668F02798DBD900A8C447 /* Person.swift */,
 				6B5E57A4279CB609007DCE76 /* PurpleButton.swift */,
 				6B5E57A6279CF7F9007DCE76 /* ItemCell.swift */,
 				6B5E57AC279E2B42007DCE76 /* CustomPickerView.swift */,
 				6B0B4C2427A7674300E70171 /* AssignmentCell.swift */,
 			);
-			path = Classes;
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B63A35527C545BD0071D217 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6B5668D62798B7B300A8C447 /* NamesViewController.swift */,
+				6B5E579E279A2287007DCE76 /* ItemsViewController.swift */,
+				6B5E57A8279D227A007DCE76 /* PaymentsViewController.swift */,
+				6B0B4C2027A73B4800E70171 /* AssignmentsViewController.swift */,
+				6BF8782E27AF4E4000BF3CBD /* ResultsViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
