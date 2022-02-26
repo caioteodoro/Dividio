@@ -25,7 +25,10 @@
 		6B5E57A7279CF7F9007DCE76 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57A6279CF7F9007DCE76 /* ItemCell.swift */; };
 		6B5E57AA279D227A007DCE76 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57A8279D227A007DCE76 /* PaymentsViewController.swift */; };
 		6B5E57AD279E2B42007DCE76 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57AC279E2B42007DCE76 /* CustomPickerView.swift */; };
+		6BAD88ED27CAA20900420C4F /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAD88EC27CAA20900420C4F /* Items.swift */; };
+		6BAD88EF27CAA47700420C4F /* WhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAD88EE27CAA47700420C4F /* WhiteButton.swift */; };
 		6BF8782F27AF4E4100BF3CBD /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8782E27AF4E4000BF3CBD /* ResultsViewController.swift */; };
+		C5307BEBA651788FC9FA9F85 /* Pods_Dividio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54B62DBE4B2C89C59F1CFE1 /* Pods_Dividio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +52,12 @@
 		6B5E57A6279CF7F9007DCE76 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		6B5E57A8279D227A007DCE76 /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
 		6B5E57AC279E2B42007DCE76 /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
+		6BAD88EC27CAA20900420C4F /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		6BAD88EE27CAA47700420C4F /* WhiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteButton.swift; sourceTree = "<group>"; };
 		6BF8782E27AF4E4000BF3CBD /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		BDC334A8734700717E73D9DC /* Pods-Dividio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dividio.release.xcconfig"; path = "Target Support Files/Pods-Dividio/Pods-Dividio.release.xcconfig"; sourceTree = "<group>"; };
+		E4965E6E6A776441935F50D4 /* Pods-Dividio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dividio.debug.xcconfig"; path = "Target Support Files/Pods-Dividio/Pods-Dividio.debug.xcconfig"; sourceTree = "<group>"; };
+		F54B62DBE4B2C89C59F1CFE1 /* Pods_Dividio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dividio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5307BEBA651788FC9FA9F85 /* Pods_Dividio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +77,8 @@
 			children = (
 				6B5668D12798B7B300A8C447 /* Dividio */,
 				6B5668D02798B7B300A8C447 /* Products */,
+				E79B5EF0BB78DFD6B010525D /* Pods */,
+				980EFE095CED1512993D0574 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				6B5668F02798DBD900A8C447 /* Person.swift */,
+				6BAD88EC27CAA20900420C4F /* Items.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +123,7 @@
 				6B5E57A2279A484D007DCE76 /* CurrencyTextField.swift */,
 				6B5668EE2798CD7800A8C447 /* TableLayout.swift */,
 				6B5E57A4279CB609007DCE76 /* PurpleButton.swift */,
+				6BAD88EE27CAA47700420C4F /* WhiteButton.swift */,
 				6B5E57A6279CF7F9007DCE76 /* ItemCell.swift */,
 				6B5E57AC279E2B42007DCE76 /* CustomPickerView.swift */,
 				6B0B4C2427A7674300E70171 /* AssignmentCell.swift */,
@@ -130,6 +143,24 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		980EFE095CED1512993D0574 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F54B62DBE4B2C89C59F1CFE1 /* Pods_Dividio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E79B5EF0BB78DFD6B010525D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4965E6E6A776441935F50D4 /* Pods-Dividio.debug.xcconfig */,
+				BDC334A8734700717E73D9DC /* Pods-Dividio.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B5668E62798B7BD00A8C447 /* Build configuration list for PBXNativeTarget "Dividio" */;
 			buildPhases = (
+				6F9CA6CCE353DD75CF1705D1 /* [CP] Check Pods Manifest.lock */,
 				6B5668CB2798B7B300A8C447 /* Sources */,
 				6B5668CC2798B7B300A8C447 /* Frameworks */,
 				6B5668CD2798B7B300A8C447 /* Resources */,
+				F03ED47DDD66A22112538F76 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,17 +229,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6F9CA6CCE353DD75CF1705D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dividio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F03ED47DDD66A22112538F76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dividio/Pods-Dividio-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dividio/Pods-Dividio-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dividio/Pods-Dividio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6B5668CB2798B7B300A8C447 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BAD88ED27CAA20900420C4F /* Items.swift in Sources */,
 				6B0B4C2527A7674300E70171 /* AssignmentCell.swift in Sources */,
 				6B5668EF2798CD7800A8C447 /* TableLayout.swift in Sources */,
 				6B5668DD2798B7B300A8C447 /* Dividio.xcdatamodeld in Sources */,
 				6B5668D72798B7B300A8C447 /* NamesViewController.swift in Sources */,
 				6B5E57AA279D227A007DCE76 /* PaymentsViewController.swift in Sources */,
 				6B5E57A7279CF7F9007DCE76 /* ItemCell.swift in Sources */,
+				6BAD88EF27CAA47700420C4F /* WhiteButton.swift in Sources */,
 				6B0B4C2127A73B4800E70171 /* AssignmentsViewController.swift in Sources */,
 				6BF8782F27AF4E4100BF3CBD /* ResultsViewController.swift in Sources */,
 				6B5668D32798B7B300A8C447 /* AppDelegate.swift in Sources */,
@@ -360,6 +437,7 @@
 		};
 		6B5668E72798B7BD00A8C447 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4965E6E6A776441935F50D4 /* Pods-Dividio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +456,7 @@
 		};
 		6B5668E82798B7BD00A8C447 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDC334A8734700717E73D9DC /* Pods-Dividio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

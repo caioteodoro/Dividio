@@ -587,7 +587,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHk-07-xr1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHk-07-xr1" customClass="WhiteButton" customModule="Dividio" customModuleProvider="target">
                                 <rect key="frame" x="49" y="603" width="320" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -662,6 +662,9 @@
         </designable>
         <designable name="ZCJ-So-Eql">
             <size key="intrinsicContentSize" width="203" height="34"/>
+        </designable>
+        <designable name="fHk-07-xr1">
+            <size key="intrinsicContentSize" width="84" height="36"/>
         </designable>
         <designable name="v9i-AM-XBX">
             <size key="intrinsicContentSize" width="320" height="216"/>

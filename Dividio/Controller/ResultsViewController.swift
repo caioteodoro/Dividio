@@ -17,12 +17,7 @@ class ResultsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var resultsPickerView: UIPickerView!
 
     //Custom Functions
-    func designSaveButton() {
-        self.saveButton.layer.shadowColor = #colorLiteral(red: 0.2509489954, green: 0.2509984672, blue: 0.2509458363, alpha: 1)
-        self.saveButton.layer.shadowOffset = CGSize(width: -4, height: 4);
-        self.saveButton.layer.shadowRadius = 0;
-        self.saveButton.layer.shadowOpacity = 1;
-    }
+
     
     //PickerView Functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -54,11 +49,20 @@ class ResultsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         modeView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1);
         modeView.layer.borderColor = #colorLiteral(red: 0.2705882353, green: 0.2705882353, blue: 0.2705882353, alpha: 1);
         modeView.layer.borderWidth = 3;
-        let modeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        modeLabel.textColor = .black
-        modeLabel.text = people[row].name
-        modeLabel.textAlignment = .center
-        modeView.addSubview(modeLabel)
+        
+        let nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 180, height: 20))
+        nameLabel.textColor = .black
+        nameLabel.text = people[row].name
+        nameLabel.textAlignment = .center
+        
+        let paymentLabel = UILabel(frame: CGRect(x: 0, y: 100, width: 180, height: 20))
+        paymentLabel.textColor = .black
+        paymentLabel.text = String(people[row].payments[0])
+        paymentLabel.textAlignment = .center
+        
+        
+        modeView.addSubview(nameLabel)
+        modeView.addSubview(paymentLabel)
         modeView.transform = CGAffineTransform(rotationAngle: 90 * (.pi/180))
         
         around.addSubview(modeView)
@@ -67,9 +71,8 @@ class ResultsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     //Essential Functions
     override func viewDidLoad() {
-        super.viewDidLoad()
-        designSaveButton()
-        resultsPickerViewSettings()
+        super.viewDidLoad();
+        resultsPickerViewSettings();
         
         self.resultsPickerView.delegate = self;
         self.resultsPickerView.dataSource = self;

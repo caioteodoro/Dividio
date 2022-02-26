@@ -1,0 +1,6 @@
+framework module Pods_Dividio {
+  umbrella header "Pods-Dividio-umbrella.h"
+
+  export *
+  module * { export * }
+}
