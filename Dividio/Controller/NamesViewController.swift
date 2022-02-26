@@ -17,6 +17,7 @@ class NamesViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addPersonButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
     
+    
     @IBAction func addPerson(_ sender: Any) {
         if let newName = textField.text, !newName.isEmpty {
             names.insert(Person.init(name: newName, payments: [], consumedItems: []), at: 0);

@@ -1,0 +1,49 @@
+{
+  "_buildCommand2" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e98d83ed7ead06f6da6d6b6d5b3229c2965"
+    },
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e9848aedf758c5983950adabed6a723c5f7"
+    }
+  ],
+  "containerPath" : "/Users/teodoro/Desktop/workspace/Dividio/Pods/Pods.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/teodoro/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/teodoro/Library/Developer/Xcode/DerivedData/Pods-hfxptnfqqlrmnedoelhkcpsiuifp/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/teodoro/Library/Developer/Xcode/DerivedData/Pods-hfxptnfqqlrmnedoelhkcpsiuifp/Index/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Release",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : false,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : false
+}

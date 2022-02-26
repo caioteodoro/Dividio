@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+iCarousel in Pods, no dependencies
+Pods-Dividio in Pods, depends on:
+iCarousel in Pods (explicit)

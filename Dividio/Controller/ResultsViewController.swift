@@ -7,39 +7,44 @@
 //
 
 import UIKit
+import iCarousel
 
-class ResultsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ResultsViewController: UIViewController, iCarouselDataSource {
 
     var people: [Person] = [];
     var items: [Item] = [];
     
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var resultsPickerView: UIPickerView!
-
+    @IBOutlet var iCarouselView: UIView!
+    
+    let myCarousel: iCarousel = {
+        let view = iCarousel();
+        view.type = .coverFlow;
+        return view
+    }()
+    
+    func numberOfItems(in carousel: iCarousel) -> Int {
+        10
+    }
+    
+    func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 180, height: 180))
+        view.backgroundColor = .red
+        return view
+    }
+    
+    func loadiCarousel() {
+        iCarouselView.addSubview(myCarousel);
+        myCarousel.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+    }
+    
+    
     //Custom Functions
 
     
-    //PickerView Functions
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return people.count
-    }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 190
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //#TODO: will I need this one?
-    }
-    
-    func resultsPickerViewSettings () {
-        self.resultsPickerView.transform = CGAffineTransform(rotationAngle: -90  * (.pi/180));
-        self.resultsPickerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 190)
-    }
+
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let around = UIView();
@@ -72,9 +77,7 @@ class ResultsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     //Essential Functions
     override func viewDidLoad() {
         super.viewDidLoad();
-        resultsPickerViewSettings();
-        
-        self.resultsPickerView.delegate = self;
-        self.resultsPickerView.dataSource = self;
+        myCarousel.dataSource = self;
+        loadiCarousel()
     }
 }
