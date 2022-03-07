@@ -42,33 +42,23 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
         view.layer.borderWidth = 3.0;
         
         let nameLabel = UILabel(frame: CGRect(x: 0, y: 15, width: 180, height: 20))
+        nameLabel.numberOfLines = 0
         nameLabel.text = people[index].name
         nameLabel.textAlignment = .center
         nameLabel.font = UIFont(name: "Avenir-Black", size: 17.0)
         
-        let paymentLabelOne = UILabel(frame: CGRect(x: 0, y: 60, width: 180, height: 20))
-        paymentLabelOne.text = "não precisa"
-        paymentLabelOne.textAlignment = .center
-        paymentLabelOne.font = UIFont(name: "Avenir-Book", size: 17.0)
-        print(people[index].hasToPay)
+        let paymentLabel = UILabel(frame: CGRect(x: 0, y: 60, width: 180, height: 60))
+        paymentLabel.numberOfLines = 0
+        paymentLabel.text = "não precisa \npagar :)"
+        paymentLabel.textAlignment = .center
+        paymentLabel.font = UIFont(name: "Avenir-Book", size: 17.0)
         
         if people[index].hasToPay > 0  {
-            paymentLabelOne.text = "pagar " + String(people[index].hasToPay)
-        }
-        
-        let paymentLabelTwo = UILabel(frame: CGRect(x: 0, y: 85, width: 180, height: 20))
-        paymentLabelTwo.text = "efetuar pagamentos"
-        paymentLabelTwo.textAlignment = .center
-        paymentLabelTwo.font = UIFont(name: "Avenir-Book", size: 17.0)
-        print(people[index].hasToPay)
-        
-        if people[index].hasToPay > 0  {
-            paymentLabelTwo.text = " para XXX"
+            paymentLabel.text = "pagar " + String(people[index].hasToPay) + "\n para XXX"
         }
         
         view.addSubview(nameLabel)
-        view.addSubview(paymentLabelOne)
-        view.addSubview(paymentLabelTwo)
+        view.addSubview(paymentLabel)
         
         return view
     }
