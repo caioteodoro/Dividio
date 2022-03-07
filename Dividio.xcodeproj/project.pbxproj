@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -157,7 +157,6 @@
 				E4965E6E6A776441935F50D4 /* Pods-Dividio.debug.xcconfig */,
 				BDC334A8734700717E73D9DC /* Pods-Dividio.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

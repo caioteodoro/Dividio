@@ -11,8 +11,7 @@ import UIKit
 
 @IBDesignable open class CustomPickerView: UIPickerView {
     
-    let rotationAngle: CGFloat! = -90  * (.pi/180)
-    
+    let rotationAngle: CGFloat! = -90  * (.pi/180)    
     
     func setup() {
         self.layer.borderColor = #colorLiteral(red: 0.2705882353, green: 0.2705882353, blue: 0.2705882353, alpha: 1);

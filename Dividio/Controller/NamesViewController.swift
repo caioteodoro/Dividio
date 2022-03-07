@@ -20,7 +20,7 @@ class NamesViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func addPerson(_ sender: Any) {
         if let newName = textField.text, !newName.isEmpty {
-            names.insert(Person.init(name: newName, payments: [], consumedItems: []), at: 0);
+            names.insert(Person.init(name: newName), at: 0);
             namesTableView.beginUpdates();
             namesTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right);
             namesTableView.endUpdates();

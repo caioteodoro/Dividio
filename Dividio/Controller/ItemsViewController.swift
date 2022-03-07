@@ -25,7 +25,7 @@ class ItemsViewController: UIViewController, UITextFieldDelegate {
         let newItemName = nameTextField.text
         let newItemPrice = priceTextField.text
         if !newItemName!.isEmpty && !newItemPrice!.isEmpty{
-            items.insert(Item.init(name: newItemName!, price: Double(newItemPrice!) ?? 0.0), at: 0);
+            items.insert(Item.init(name: newItemName!, totalPrice: Double(newItemPrice!) ?? 0.0), at: 0);
             itemsTableView.beginUpdates();
             itemsTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right);
             itemsTableView.endUpdates();
@@ -81,13 +81,13 @@ extension ItemsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = itemsTableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemCell
         cell.itemNameLabel.text = items[indexPath.row].name;
-        cell.itemPriceLabel.text = String( items[indexPath.row].price);
+        cell.itemPriceLabel.text = String( items[indexPath.row].totalPrice);
         return cell
     }
         
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            totalCost -= items[indexPath.row].price
+            totalCost -= items[indexPath.row].totalPrice
             totalCostLabel.text = "valor total: R$ " + String(totalCost);
             items.remove(at: indexPath.row)
             itemsTableView.deleteRows(at: [indexPath], with: .fade)

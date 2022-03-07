@@ -12,7 +12,7 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
     var people: [Person] = [];
     var items: [Item] = [];
-    var listOfPayments: [Double] = [];
+    var totalCost: Double = 0;
     var pickerViewCounter: [Bool] = [];
     var selectedPeoplePriorChanging: [Bool] = [];
     var selectedSettingsPriorChanging: Int = 1;
@@ -133,6 +133,7 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
             let destinationViewController: ResultsViewController = segue.destination as! ResultsViewController
             destinationViewController.items = self.items;
             destinationViewController.people = self.people;
+            destinationViewController.totalCost = self.totalCost;
         }
     }
 }
