@@ -16,7 +16,6 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
     var totalCost: Double = 0;
     var receivers: [Person] = [];
     var payers: [Person] = [];
-    var results: [Result] = [];
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet var iCarouselView: UIView!
@@ -52,12 +51,15 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
         
         let paymentLabel = UILabel(frame: CGRect(x: 0, y: 60, width: 180, height: 60))
         paymentLabel.numberOfLines = 0
-        paymentLabel.text = "não precisa \npagar :)"
         paymentLabel.textAlignment = .center
         paymentLabel.font = UIFont(name: "Avenir-Book", size: 17.0)
         
-        if people[index].hasToPay > 0  {
-            paymentLabel.text = "pagar " + String(people[index].hasToPay) + "\n para XXX"
+        if !people[index].paysTo.isEmpty {
+            paymentLabel.text = "pagar " + String(people[index].paysTo[0].value) + "\npara " + String(people[index].paysTo[0].receiver.name)
+        } else if !people[index].receivesFrom.isEmpty {
+            paymentLabel.text = "receber " + String(people[index].receivesFrom[0].value) + "\nde " + String(people[index].receivesFrom[0].payer.name)
+        } else {
+            paymentLabel.text = "você não precisa pagar\ne nem receber"
         }
         
         view.addSubview(nameLabel)
@@ -75,6 +77,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
                 }
             }
             items[i].dividedPrice = items[i].totalPrice / consumers
+            print(items[i].dividedPrice)
         }
     }
     
@@ -85,6 +88,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
                     people[i].hasToPay += items[n].dividedPrice;
                 }
             }
+            print(people[i].hasToPay)
         }
     }
     
@@ -96,23 +100,35 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
             } else {
                 receivers.append(people[i])
             }
+            print(people[i].hasToPay)
         }
     }
     
     func presentResults () {
-        for i in 0...receivers.count-1 {
-            while receivers[i].hasToPay > 0 {
-                for n in 0...payers.count-1 {
-                    if receivers[i].hasToPay + payers[n].hasToPay >= 0 {
-                        let newPayment = Result(payer: payers[n].name, value: payers[n].hasToPay, receiver: receivers[i].name)
-                        results.append(newPayment)
-                        receivers[i].hasToPay += payers[n].hasToPay
-                        payers[n].hasToPay = 0
+        for i in 0...payers.count-1 {
+            //while payers[i].hasToPay > 0 {
+                for n in 0...receivers.count-1 {
+                    if payers[i].hasToPay + receivers[n].hasToPay >= 0 {
+                        let newPayment = Payment(payer: payers[i], value: (receivers[n].hasToPay * -1), receiver: receivers[n])
+                        
+                        receivers[n].receivesFrom.append(newPayment)
+                        payers[i].paysTo.append(newPayment)
+                        
+                        print(receivers[n].hasToPay)
+                        
+                        payers[i].hasToPay += receivers[n].hasToPay
+                        receivers[n].hasToPay = 0
                     }
                 }
-            }
+            //}
+            
         }
     }
+    
+    //
+    
+    
+    
     
     func calculate() {
         self.calculateDividedPrices();

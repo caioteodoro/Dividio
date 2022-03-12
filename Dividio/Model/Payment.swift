@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  Payment.swift
 //  Dividio
 //
 //  Created by Caio Teodoro on 11/03/22.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-class Result {
-    var payer: String
+class Payment {
+    var payer: Person
     var value: Double
-    var receiver: String
+    var receiver: Person
     
-    init(payer: String, value: Double, receiver: String) {
+    init (payer: Person, value: Double, receiver: Person) {
         self.payer = payer;
-        self.value = value;
+        self.value = 0.0;
         self.receiver = receiver;
     }
 }

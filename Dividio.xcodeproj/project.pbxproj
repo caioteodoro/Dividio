@@ -27,7 +27,7 @@
 		6B5E57AD279E2B42007DCE76 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5E57AC279E2B42007DCE76 /* CustomPickerView.swift */; };
 		6BAD88ED27CAA20900420C4F /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAD88EC27CAA20900420C4F /* Items.swift */; };
 		6BAD88EF27CAA47700420C4F /* WhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAD88EE27CAA47700420C4F /* WhiteButton.swift */; };
-		6BB37E6627DC2CD6002EFCAE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB37E6527DC2CD6002EFCAE /* Result.swift */; };
+		6BB37E6827DC3549002EFCAE /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB37E6727DC3549002EFCAE /* Payment.swift */; };
 		6BF8782F27AF4E4100BF3CBD /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8782E27AF4E4000BF3CBD /* ResultsViewController.swift */; };
 		C5307BEBA651788FC9FA9F85 /* Pods_Dividio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54B62DBE4B2C89C59F1CFE1 /* Pods_Dividio.framework */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		6B5E57AC279E2B42007DCE76 /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		6BAD88EC27CAA20900420C4F /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		6BAD88EE27CAA47700420C4F /* WhiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteButton.swift; sourceTree = "<group>"; };
-		6BB37E6527DC2CD6002EFCAE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		6BB37E6727DC3549002EFCAE /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		6BF8782E27AF4E4000BF3CBD /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		BDC334A8734700717E73D9DC /* Pods-Dividio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dividio.release.xcconfig"; path = "Target Support Files/Pods-Dividio/Pods-Dividio.release.xcconfig"; sourceTree = "<group>"; };
 		E4965E6E6A776441935F50D4 /* Pods-Dividio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dividio.debug.xcconfig"; path = "Target Support Files/Pods-Dividio/Pods-Dividio.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 			children = (
 				6B5668F02798DBD900A8C447 /* Person.swift */,
 				6BAD88EC27CAA20900420C4F /* Items.swift */,
-				6BB37E6527DC2CD6002EFCAE /* Result.swift */,
+				6BB37E6727DC3549002EFCAE /* Payment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,7 +280,6 @@
 			files = (
 				6BAD88ED27CAA20900420C4F /* Items.swift in Sources */,
 				6B0B4C2527A7674300E70171 /* AssignmentCell.swift in Sources */,
-				6BB37E6627DC2CD6002EFCAE /* Result.swift in Sources */,
 				6B5668EF2798CD7800A8C447 /* TableLayout.swift in Sources */,
 				6B5668DD2798B7B300A8C447 /* Dividio.xcdatamodeld in Sources */,
 				6B5668D72798B7B300A8C447 /* NamesViewController.swift in Sources */,
@@ -295,6 +294,7 @@
 				6B5E57AD279E2B42007DCE76 /* CustomPickerView.swift in Sources */,
 				6B5E579F279A2287007DCE76 /* ItemsViewController.swift in Sources */,
 				6B5668EB2798BED500A8C447 /* WhiteTextField.swift in Sources */,
+				6BB37E6827DC3549002EFCAE /* Payment.swift in Sources */,
 				6B5E57A3279A484D007DCE76 /* CurrencyTextField.swift in Sources */,
 				6B5668D52798B7B300A8C447 /* SceneDelegate.swift in Sources */,
 			);
