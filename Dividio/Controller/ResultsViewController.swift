@@ -14,6 +14,9 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
     var people: [Person] = [];
     var items: [Item] = [];
     var totalCost: Double = 0;
+    var receivers: [Person] = [];
+    var payers: [Person] = [];
+    var results: [Result] = [];
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet var iCarouselView: UIView!
@@ -85,9 +88,37 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
         }
     }
     
+    func getReceiversAndPayers() {
+        for i in 0...people.count-1 {
+            people[i].hasToPay -= people[i].payments.reduce(0,+)
+            if people[i].hasToPay > 0 {
+                payers.append(people[i])
+            } else {
+                receivers.append(people[i])
+            }
+        }
+    }
+    
+    func presentResults () {
+        for i in 0...receivers.count-1 {
+            while receivers[i].hasToPay > 0 {
+                for n in 0...payers.count-1 {
+                    if receivers[i].hasToPay + payers[n].hasToPay >= 0 {
+                        let newPayment = Result(payer: payers[n].name, value: payers[n].hasToPay, receiver: receivers[i].name)
+                        results.append(newPayment)
+                        receivers[i].hasToPay += payers[n].hasToPay
+                        payers[n].hasToPay = 0
+                    }
+                }
+            }
+        }
+    }
+    
     func calculate() {
         self.calculateDividedPrices();
         self.calculatePaymentPerPerson();
+        self.getReceiversAndPayers();
+        self.presentResults();
     }
     
     
