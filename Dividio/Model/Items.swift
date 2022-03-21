@@ -3,11 +3,11 @@ import Foundation
 class Item {
     var name: String;
     var totalPrice: Double;
-    var dividedPrice: Double;
+    var pricePerPerson: Double;
     
     init(name: String, totalPrice: Double) {
         self.name = name;
         self.totalPrice = totalPrice;
-        self.dividedPrice = 0;
+        self.pricePerPerson = 0;
     }
 }

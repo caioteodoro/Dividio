@@ -14,8 +14,8 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
     var people: [Person] = [];
     var items: [Item] = [];
     var totalCost: Double = 0;
-    var receivers: [Person] = [];
-    var payers: [Person] = [];
+    var receivers: [Receiver] = [];
+    var payers: [Payer] = [];
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet var iCarouselView: UIView!
@@ -27,7 +27,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
     }()
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-        people.count
+        payers.count
     }
     
     func loadiCarousel() {
@@ -45,7 +45,7 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
         
         let nameLabel = UILabel(frame: CGRect(x: 0, y: 15, width: 180, height: 20))
         nameLabel.numberOfLines = 0
-        nameLabel.text = people[index].name
+        nameLabel.text = payers[index].name
         nameLabel.textAlignment = .center
         nameLabel.font = UIFont(name: "Avenir-Black", size: 17.0)
         
@@ -54,12 +54,8 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
         paymentLabel.textAlignment = .center
         paymentLabel.font = UIFont(name: "Avenir-Book", size: 17.0)
         
-        if !people[index].paysTo.isEmpty {
-            paymentLabel.text = "pagar " + String(people[index].paysTo[0].value) + "\npara " + String(people[index].paysTo[0].receiver.name)
-        } else if !people[index].receivesFrom.isEmpty {
-            paymentLabel.text = "receber " + String(people[index].receivesFrom[0].value) + "\nde " + String(people[index].receivesFrom[0].payer.name)
-        } else {
-            paymentLabel.text = "você não precisa pagar\ne nem receber"
+        if !payers[index].paysTo.isEmpty {
+            paymentLabel.text = "pagar " + String(payers[index].paysTo[0].value) + "\npara " + String(payers[index].paysTo[0].value)
         }
         
         view.addSubview(nameLabel)
@@ -72,61 +68,75 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
         for i in 0...items.count-1 {
             var consumers = 0.0;
             for n in 0...people.count-1 {
-                if people[n].consumedItems[i] == true {
+                if people[n].consumedItemsList[i] == true {
                     consumers += 1;
                 }
             }
-            items[i].dividedPrice = items[i].totalPrice / consumers
-            print(items[i].dividedPrice)
+            items[i].pricePerPerson = items[i].totalPrice / consumers
         }
     }
     
     func calculatePaymentPerPerson () {
         for i in 0...people.count-1 {
             for n in 0...items.count-1 {
-                if people[i].consumedItems[n] == true {
-                    people[i].hasToPay += items[n].dividedPrice;
+                if people[i].consumedItemsList[n] == true {
+                    people[i].consumedItemsPrice += items[n].pricePerPerson;
                 }
             }
-            print(people[i].hasToPay)
+        }
+    }
+  
+    func getReceiversAndPayers() {
+        for i in 0...people.count-1 {
+            var finalValue = people[i].consumedItemsPrice
+            finalValue -= people[i].payments.reduce(0,+)
+            if finalValue > 0 {
+                let payer: Payer = people[i] as! Payer
+                payers.insert(payer, at: 0)
+                payers[0].hasToPay = finalValue
+            } else {
+                let receiver: Receiver = people[i] as! Receiver
+                receivers.insert(receiver, at: 0)
+                receivers[0].hasToReceive = finalValue
+            }
         }
     }
     
-    func getReceiversAndPayers() {
-        for i in 0...people.count-1 {
-            people[i].hasToPay -= people[i].payments.reduce(0,+)
-            if people[i].hasToPay > 0 {
-                payers.append(people[i])
-            } else {
-                receivers.append(people[i])
-            }
-            print(people[i].hasToPay)
-        }
-    }
+//    func presentResults () {
+//        for i in 0...payers.count-1 {
+//            //while payers[i].hasToPay > 0 {
+//                for n in 0...receivers.count-1 {
+//                    if payers[i].consumedItemsPrice + receivers[n].consumedItemsPrice >= 0 {
+//                        let newPayment = Payment(payer: payers[i], value: (receivers[n].consumedItemsPrice * -1), receiver: receivers[n])
+//
+//                        receivers[n].receivesFrom.append(newPayment)
+//                        payers[i].paysTo.append(newPayment)
+//
+//                        print(receivers[n].consumedItemsPrice)
+//
+//                        payers[i].consumedItemsPrice += receivers[n].consumedItemsPrice
+//                        receivers[n].consumedItemsPrice = 0
+//                    }
+//                }
+//            //}
+//        }
+//    }
     
     func presentResults () {
         for i in 0...payers.count-1 {
             //while payers[i].hasToPay > 0 {
                 for n in 0...receivers.count-1 {
-                    if payers[i].hasToPay + receivers[n].hasToPay >= 0 {
-                        let newPayment = Payment(payer: payers[i], value: (receivers[n].hasToPay * -1), receiver: receivers[n])
+                    let newPayment = Payment(payer: payers[i], value: (receivers[n].hasToReceive * -1), receiver: receivers[n])
                         
-                        receivers[n].receivesFrom.append(newPayment)
-                        payers[i].paysTo.append(newPayment)
+                    receivers[n].receivesFrom.append(newPayment)
+                    payers[i].paysTo.append(newPayment)
                         
-                        print(receivers[n].hasToPay)
-                        
-                        payers[i].hasToPay += receivers[n].hasToPay
-                        receivers[n].hasToPay = 0
-                    }
+                    payers[i].hasToPay -= newPayment.value
+                    receivers[n].hasToReceive += newPayment.value
                 }
             //}
-            
         }
     }
-    
-    //
-    
     
     
     
@@ -145,8 +155,8 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
     //Essential Functions
     override func viewDidLoad() {
         super.viewDidLoad();
+        calculate();
         myCarousel.dataSource = self;
         loadiCarousel();
-        calculate();
     }
 }

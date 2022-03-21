@@ -29,14 +29,14 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
             
         case 0:
             for i in 0...(people.count-1) {
-                people[i].consumedItems[selectedItem] = selectedPeoplePriorChanging[i]
+                people[i].consumedItemsList[selectedItem] = selectedPeoplePriorChanging[i]
             }
             selectionOfRows()
             
         case 1:
             for i in 0...(people.count-1) {
-                selectedPeoplePriorChanging.insert(people[i].consumedItems[selectedItem], at: i)
-                people[i].consumedItems[selectedItem] = true
+                selectedPeoplePriorChanging.insert(people[i].consumedItemsList[selectedItem], at: i)
+                people[i].consumedItemsList[selectedItem] = true
             }
             selectionOfRows()
             
@@ -55,9 +55,9 @@ class AssignmentsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         for i in 0...(items.count-1) {
             pickerViewCounter.insert(false, at: i)
             for n in 0...(people.count-1) {
-                people[n].consumedItems.insert(false, at: i)
+                people[n].consumedItemsList.insert(false, at: i)
             }
-            people[0].consumedItems[i] = true
+            people[0].consumedItemsList[i] = true
         }
         pickerViewCounter[0] = true
         allowContinueButton()
@@ -153,16 +153,16 @@ extension AssignmentsViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         segmentedControl.selectedSegmentIndex = 0
-        people[indexPath.row].consumedItems[selectedItem] = false
+        people[indexPath.row].consumedItemsList[selectedItem] = false
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        people[indexPath.row].consumedItems[selectedItem] = true
+        people[indexPath.row].consumedItemsList[selectedItem] = true
     }
     
     func selectionOfRows () {
         for i in 0...(people.count-1){
-            if people[i].consumedItems[selectedItem] == true {
+            if people[i].consumedItemsList[selectedItem] == true {
                 peopleTableView.selectRow(at: IndexPath(row: i, section: 0), animated: true, scrollPosition: .top)
             } else {
                 peopleTableView.deselectRow(at: IndexPath(row: i, section: 0), animated: true)
