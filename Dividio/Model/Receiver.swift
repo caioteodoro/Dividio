@@ -11,9 +11,13 @@ import UIKit
 class Receiver: Person {
     var hasToReceive: Double;
     var receivesFrom: [Payment];
-    init(name: String, hasToReceive: Double, receivesFrom: [Payment]) {
+    init(person: Person, hasToReceive: Double) {
         self.hasToReceive = hasToReceive;
-        self.receivesFrom = receivesFrom;
-        super.init(name: name)
+        self.receivesFrom = [];
+        super.init(name: person.name)
+        self.name = person.name;
+        self.payments = person.payments;
+        self.consumedItemsList = person.consumedItemsList;
+        self.consumedItemsPrice = person.consumedItemsPrice;
     }
 }

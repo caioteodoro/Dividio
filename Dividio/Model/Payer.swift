@@ -11,9 +11,13 @@ import UIKit
 class Payer: Person {
     var hasToPay: Double;
     var paysTo: [Payment];
-    init(name: String, hasToPay: Double, paysTo: [Payment]) {
+    init(person: Person, hasToPay: Double) {
         self.hasToPay = hasToPay;
-        self.paysTo = paysTo;
-        super.init(name: name)
+        self.paysTo = [];
+        super.init(name: person.name)
+        self.name = person.name;
+        self.payments = person.payments;
+        self.consumedItemsList = person.consumedItemsList;
+        self.consumedItemsPrice = person.consumedItemsPrice;
     }
 }

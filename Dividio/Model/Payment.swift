@@ -15,7 +15,7 @@ class Payment {
     
     init (payer: Person, value: Double, receiver: Person) {
         self.payer = payer;
-        self.value = 0.0;
+        self.value = value;
         self.receiver = receiver;
     }
 }

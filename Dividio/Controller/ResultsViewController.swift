@@ -53,9 +53,12 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
         paymentLabel.numberOfLines = 0
         paymentLabel.textAlignment = .center
         paymentLabel.font = UIFont(name: "Avenir-Book", size: 17.0)
+        paymentLabel.text = ""
         
         if !payers[index].paysTo.isEmpty {
-            paymentLabel.text = "pagar " + String(payers[index].paysTo[0].value) + "\npara " + String(payers[index].paysTo[0].value)
+            for i in 0...payers[index].payments.count-1 {
+                paymentLabel.text! += "pagar R$ " + String(payers[index].paysTo[i].value) + "para " + payers[index].paysTo[i].receiver.name + "\n"
+            }
         }
         
         view.addSubview(nameLabel)
@@ -88,57 +91,40 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
   
     func getReceiversAndPayers() {
         for i in 0...people.count-1 {
-            var finalValue = people[i].consumedItemsPrice
+            var finalValue = people[i].consumedItemsPrice;
             finalValue -= people[i].payments.reduce(0,+)
             if finalValue > 0 {
-                let payer: Payer = people[i] as! Payer
-                payers.insert(payer, at: 0)
-                payers[0].hasToPay = finalValue
+                let payer = Payer(person: people[i], hasToPay: finalValue)
+                payers.append(payer)
             } else {
-                let receiver: Receiver = people[i] as! Receiver
-                receivers.insert(receiver, at: 0)
-                receivers[0].hasToReceive = finalValue
+                let receiver = Receiver(person: people[i], hasToReceive: finalValue * -1)
+                receivers.append(receiver)
             }
         }
     }
-    
-//    func presentResults () {
-//        for i in 0...payers.count-1 {
-//            //while payers[i].hasToPay > 0 {
-//                for n in 0...receivers.count-1 {
-//                    if payers[i].consumedItemsPrice + receivers[n].consumedItemsPrice >= 0 {
-//                        let newPayment = Payment(payer: payers[i], value: (receivers[n].consumedItemsPrice * -1), receiver: receivers[n])
-//
-//                        receivers[n].receivesFrom.append(newPayment)
-//                        payers[i].paysTo.append(newPayment)
-//
-//                        print(receivers[n].consumedItemsPrice)
-//
-//                        payers[i].consumedItemsPrice += receivers[n].consumedItemsPrice
-//                        receivers[n].consumedItemsPrice = 0
-//                    }
-//                }
-//            //}
-//        }
-//    }
+
     
     func presentResults () {
         for i in 0...payers.count-1 {
-            //while payers[i].hasToPay > 0 {
+            while payers[i].hasToPay > 0 {
                 for n in 0...receivers.count-1 {
-                    let newPayment = Payment(payer: payers[i], value: (receivers[n].hasToReceive * -1), receiver: receivers[n])
-                        
-                    receivers[n].receivesFrom.append(newPayment)
+                    var paymentValue: Double;
+                    var newPayment: Payment;
+                    if payers[i].hasToPay > receivers[n].hasToReceive {
+                        paymentValue = receivers[n].hasToReceive
+                        newPayment = Payment(payer: payers[i], value: paymentValue, receiver: receivers[i])
+                    } else {
+                        paymentValue = payers[i].hasToPay
+                        newPayment = Payment(payer: payers[i], value: paymentValue, receiver: receivers[n])
+                    }
                     payers[i].paysTo.append(newPayment)
-                        
-                    payers[i].hasToPay -= newPayment.value
-                    receivers[n].hasToReceive += newPayment.value
+                    payers[i].hasToPay -= paymentValue
+                    receivers[n].receivesFrom.append(newPayment)
+                    receivers[n].hasToReceive -= paymentValue
                 }
-            //}
+            }
         }
     }
-    
-    
     
     func calculate() {
         self.calculateDividedPrices();
