@@ -16,6 +16,9 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
     var totalCost: Double = 0;
     var receivers: [Receiver] = [];
     var payers: [Payer] = [];
+    var paymentsCounter = 0;
+    var currentAmountOfPayments = 0;
+    var currentPayer = 0;
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet var iCarouselView: UIView!
@@ -27,7 +30,11 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
     }()
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-        payers.count
+        var numberOfCells = 0;
+        for i in 0...payers.count-1 {
+            numberOfCells += payers[i].paysTo.count
+        }
+        return numberOfCells
     }
     
     func loadiCarousel() {
@@ -43,26 +50,37 @@ class ResultsViewController: UIViewController, iCarouselDataSource {
         view.layer.borderColor = #colorLiteral(red: 0.2705882353, green: 0.2705882353, blue: 0.2705882353, alpha: 1);
         view.layer.borderWidth = 3.0;
         
-        let nameLabel = UILabel(frame: CGRect(x: 0, y: 15, width: 180, height: 20))
-        nameLabel.numberOfLines = 0
-        nameLabel.text = payers[index].name
-        nameLabel.textAlignment = .center
-        nameLabel.font = UIFont(name: "Avenir-Black", size: 17.0)
+        let namesLabel = UILabel(frame: CGRect(x: 0, y: 15, width: 180, height: 20))
+        namesLabel.numberOfLines = 0
+        namesLabel.textAlignment = .center
+        namesLabel.font = UIFont(name: "Avenir-Black", size: 18.0)
         
-        let paymentLabel = UILabel(frame: CGRect(x: 0, y: 60, width: 180, height: 60))
-        paymentLabel.numberOfLines = 0
-        paymentLabel.textAlignment = .center
-        paymentLabel.font = UIFont(name: "Avenir-Book", size: 17.0)
-        paymentLabel.text = ""
+        let valueOfPaymentLabel = UILabel(frame: CGRect(x: 0, y: 60, width: 180, height: 60))
+        valueOfPaymentLabel.numberOfLines = 0
+        valueOfPaymentLabel.textAlignment = .center
+        valueOfPaymentLabel.font = UIFont(name: "Avenir-Book", size: 30.0)
         
-        if !payers[index].paysTo.isEmpty {
-            for i in 0...payers[index].payments.count-1 {
-                paymentLabel.text! += "pagar R$ " + String(payers[index].paysTo[i].value) + "para " + payers[index].paysTo[i].receiver.name + "\n"
+        
+        currentAmountOfPayments = payers[currentPayer].paysTo.count - 1
+        
+        func editText() {
+            namesLabel.text = payers[currentPayer].paysTo[paymentsCounter].payer.name + " para " + payers[currentPayer].paysTo[paymentsCounter].receiver.name
+            valueOfPaymentLabel.text = "R$ " + String(payers[currentPayer].paysTo[paymentsCounter].value)
+        }
+        
+        if !payers[currentPayer].paysTo.isEmpty {
+            if paymentsCounter < currentAmountOfPayments {
+                editText()
+                paymentsCounter += 1
+            } else {
+                editText()
+                paymentsCounter = 0
+                currentPayer = index;
             }
         }
         
-        view.addSubview(nameLabel)
-        view.addSubview(paymentLabel)
+        view.addSubview(namesLabel)
+        view.addSubview(valueOfPaymentLabel)
         
         return view
     }

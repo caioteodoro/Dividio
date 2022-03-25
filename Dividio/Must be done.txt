@@ -21,6 +21,8 @@ Add mask
 Recognize comma as dot
 
 
+Think about presentation of multiple payments in cells
+
 
 
 
