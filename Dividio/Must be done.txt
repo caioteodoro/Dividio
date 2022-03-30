@@ -7,21 +7,18 @@ Fade label when update price
 
 Third vc
 Fade labels too
----add multiple payments per person
-Hide / show payments per person
 Include buttons to hide all and expand all (might be an arrow up and down, no text)
 
 Fourth vc
 Check segment control status before changing items to match what was settled.
-Disable continue button if an item was not assigned to anyone (you can edit what was made and only give TRUE to an item if it has at least one person selected)
+Disable continue button if an item was not assigned to anyone (you can edit what was made and only 
+Color the names of these not assigned items
+give TRUE to an item if it has at least one person selected)
 
 
 Numbers txt fields
 Add mask 
 Recognize comma as dot
-
-
-Think about presentation of multiple payments in cells
 
 
 
